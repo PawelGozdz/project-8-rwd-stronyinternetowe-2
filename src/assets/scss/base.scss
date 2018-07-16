@@ -7,20 +7,21 @@
 }
 
 html {
-  font-size: 62.5%; // 1rem = 10px; 10px/16px = 62.5%
+  //font-size: 62.5%; // 1rem = 10px; 10px/16px = 62.5%s
+  font-family: 'Abel', sans-serif;
   
   @include respond(phone) {
-    font-size: 50%;
+    font-size: 80%;
   }
   
   @include respond(tab-port) {
-    font-size: 50%; // 1rem = 8px; 8/16 = 50%
+    font-size: 85%; // 1rem = 8px; 8/16 = 50%
   }
   @include respond(tab-land) {
-    font-size: 56.5%; // 1rem = 9px; 9/16 = 56.5%
+    font-size: 95%; // 1rem = 9px; 9/16 = 56.5%
   }
   @include respond(big-desktop) {
-    font-size: 62.5%; // 1rem = 10; 10/16 = 62.5%
+    font-size: 110%; // 1rem = 10; 10/16 = 62.5%
   }
 }
 
@@ -28,3 +29,19 @@ body {
   box-sizing: border-box;
   background: lightgreen;
 }
+a:link,
+a:visited, html:link,
+html:visited {
+  color: $gray-dark;
+}
+a {
+  //text-decoration: none;
+}
+
+ol, ul {
+  margin: 0;
+  list-style-type: none;
+}
+// a, p, li {
+//   font-size: 2rem;
+// }

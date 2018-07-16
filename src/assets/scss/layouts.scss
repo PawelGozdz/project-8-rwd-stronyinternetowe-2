@@ -1,0 +1,26 @@
+body {
+
+}
+.w-container {
+  max-width: $container;
+  margin: 0 auto;
+}
+.w-full {
+  width: 100%;
+}
+
+.wrapper {
+  @extend .w-full;
+  height: 100%;
+}
+
+// @extend w-full or w-container
+.nav {
+  @extend .w-full;
+}
+
+.hero {
+  @extend .w-container;
+}
+
+

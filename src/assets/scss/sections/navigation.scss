@@ -1,0 +1,136 @@
+.nav {
+  background: $white;
+
+  &__container {
+    @extend .w-container;
+    padding: $sp-1 $sp-1;
+    height: auto;
+  }
+
+  .navbar {
+    height: 0;
+    transform: scale(0);
+    transform-origin: top left;
+    transition: all .2s ease;
+
+    @include respond(tab-port) {
+      transform: scale(1);
+      height: auto;
+    }
+  }
+  
+  &__list {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    //justify-content: center;
+    // align-items: center;
+
+    @include respond(tab-port) {
+      flex-direction: row;
+      height: 100%;
+      justify-content: space-between;
+      max-width: 60%;
+    }
+  }
+
+  &__item {
+    margin: $sp-2 0;
+    border-bottom: 1px solid $gray-light;
+    height: auto;
+    
+    @include respond(tab-port) {
+      border-bottom: 0;
+    }
+
+    a {
+      display: block;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+  }
+  
+  // Hamburger menu toggler
+  
+  &__checkbox {display: none;}
+  &__checkbox:checked ~ .navbar {
+    // display: block;
+    transform: scale(1);
+    height: auto;
+    margin-top: $sp-2;
+
+    @include respond(tab-port) {
+      margin-top: 0;
+    }
+  }
+
+  &__menu {
+    height: 36px;
+    width: 46px;
+    background: transparent;
+    display: inline-block;
+    //padding: 4px;
+    text-align: center;
+    border: 3px solid $gray-mid;
+    border-radius: 4px;
+    cursor: pointer;
+
+    @include respond(tab-port) {
+      display: none;
+    }
+  }
+
+  &__icon {
+    position: relative;
+    margin-top: 14px;
+    
+
+    &,
+    &::before,
+    &::after {
+      width: 24px;
+      height: 2px;
+      background-color: $gray-mid;
+      display: inline-block;
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      transition: all .2s;
+    }
+
+    &::before {
+      top: -8px;
+    }
+
+    &::after {
+      top: 8px;
+    }
+  }
+
+  &__menu:hover &__icon::before {
+    top: -9px;
+  }
+  &__menu:hover &__icon::after {
+    top: 9px;
+  }
+
+  &__checkbox:checked + &__menu &__icon {
+    background-color: transparent; 
+  }
+
+  &__checkbox:checked + &__menu &__icon::before {
+    top: 0;
+    transform: rotate(135deg) ; 
+  }
+
+  &__checkbox:checked + &__menu &__icon::after {
+    top: 0;
+    transform: rotate(-135deg); 
+  }
+
+  // END Hamburger menu toggler
+}
