@@ -1,0 +1,25 @@
+{
+  "name": "rwd-stronyinternetowe-2",
+  "version": "1.0.0",
+  "description": "A new website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PawelGozdz/project-8-rwd-stronyinternetowe-2.git"
+  },
+  "author": "Pawel Gozdz",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^4.9.2"
+  },
+  "dependencies": {
+    "jquery": "^3.3.1"
+  },
+  "bugs": {
+    "url": "https://github.com/PawelGozdz/project-8-rwd-stronyinternetowe-2/issues"
+  },
+  "homepage": "https://github.com/PawelGozdz/project-8-rwd-stronyinternetowe-2#readme"
+}
