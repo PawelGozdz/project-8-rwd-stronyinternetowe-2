@@ -1,5 +1,6 @@
 .nav {
   background: $white;
+  border-bottom: 2px solid $gray-light;
 
   &__container {
     @extend .w-container;

@@ -15,12 +15,10 @@ body {
 }
 
 // @extend w-full or w-container
-.nav {
+.nav ,
+.hero{
   @extend .w-full;
 }
 
-.hero {
-  @extend .w-container;
-}
 
 

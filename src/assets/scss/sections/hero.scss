@@ -1,0 +1,16 @@
+.hero {
+  position: relative;
+  height: 90vh;
+   background-image: linear-gradient( rgba($white, .75), rgba($white, .75)), url('../img/hero-4-big.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  &__container {
+    @extend .w-container;
+    text-align: center;
+
+    @include absCenter;
+  }
+
+
+}

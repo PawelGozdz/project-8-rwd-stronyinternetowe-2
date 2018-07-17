@@ -24,8 +24,7 @@ body {
 * `article` contexts in Chrome, Firefox, and Safari.
 */
 h1 {
-  font-size: 2em;
-  margin: 0.67em 0; }
+  font-size: 2em; }
 
 /* Grouping content
  ========================================================================== */
@@ -312,11 +311,12 @@ $breakpoint argument choices:
 - tab-land
 - big-desktop
 */
-.w-container, .hero, .nav__container {
-  max-width: 1366px;
+.w-container, .nav__container, .hero__container {
+  max-width: 1200px;
   margin: 0 auto; }
 
-.w-full, .wrapper, .nav {
+.w-full, .wrapper, .nav,
+.hero {
   width: 100%; }
 
 .wrapper {
@@ -372,13 +372,6 @@ $breakpoint argument choices:
   src: local("Antic Didone Regular"), local("AnticDidone-Regular"), url("../fonts/antic-didone-v6-latin-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/antic-didone-v6-latin-regular.woff2") format("woff2"), url("../fonts/antic-didone-v6-latin-regular.woff") format("woff"), url("../fonts/antic-didone-v6-latin-regular.ttf") format("truetype"), url("../fonts/antic-didone-v6-latin-regular.svg#AnticDidone") format("svg");
   /* Legacy iOS */ }
 
-*,
-*::after,
-*::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit; }
-
 html {
   font-family: 'Abel', sans-serif; }
   @media (min-width: 0px) {
@@ -394,21 +387,53 @@ html {
     html {
       font-size: 110%; } }
 
-body {
-  box-sizing: border-box;
-  background: lightgreen; }
-
-a:link,
-a:visited, html:link,
+a, html:link,
 html:visited {
   color: #222222; }
+
+h1 {
+  font-size: 3.4rem; }
+
+.section-heading {
+  font-size: 2.8rem;
+  margin: 2.4rem 0; }
+
+.article-heading {
+  font-size: 2rem;
+  margin: 1.6rem 0; }
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+body {
+  box-sizing: border-box;
+  background: #fff; }
 
 ol, ul {
   margin: 0;
   list-style-type: none; }
 
+.btn {
+  text-decoration: none;
+  padding: 0.4rem;
+  border-bottom: 2px solid transparent;
+  transition: all .3s; }
+  .btn--purple:hover {
+    border-bottom: 2px solid #9d6aa3; }
+  .btn:hover::after {
+    display: inline-block;
+    transform: translateX(5px) scale(1.2); }
+  .btn::after {
+    content: "\00BB";
+    margin-left: 3px; }
+
 .nav {
-  background: #fff; }
+  background: #fff;
+  border-bottom: 2px solid #f0f0f0ec; }
   .nav__container {
     padding: 0.4rem 0.4rem; }
   .nav .navbar {
@@ -500,3 +525,16 @@ ol, ul {
   .nav__checkbox:checked + .nav__menu .nav__icon::after {
     top: 0;
     transform: rotate(-135deg); }
+
+.hero {
+  position: relative;
+  height: 90vh;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), url("../img/hero-4-big.jpg");
+  background-size: cover;
+  background-repeat: no-repeat; }
+  .hero__container {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
