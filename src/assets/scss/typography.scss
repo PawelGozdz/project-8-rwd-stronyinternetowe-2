@@ -1,0 +1,43 @@
+html {
+  //font-size: 62.5%; // 1rem = 10px; 10px/16px = 62.5%s
+  font-family: 'Abel', sans-serif;
+  
+  @include respond(phone) {
+    font-size: 80%;
+  }
+  
+  @include respond(tab-port) {
+    font-size: 85%; // 1rem = 8px; 8/16 = 50%
+  }
+  @include respond(tab-land) {
+    font-size: 95%; // 1rem = 9px; 9/16 = 56.5%
+  }
+  @include respond(big-desktop) {
+    font-size: 110%; // 1rem = 10; 10/16 = 62.5%
+  }
+}
+
+a, html:link,
+html:visited {
+  color: $gray-dark;
+}
+a {
+  //text-decoration: none;
+}
+
+
+// HEADERS
+
+h1 {
+  font-size: 3.4rem;
+}
+
+.section-heading {
+  font-size: 2.8rem; 
+  margin: $sp-4 0;
+}
+
+.article-heading {
+  font-size: 2rem;
+  margin: $sp-3 0;
+}
