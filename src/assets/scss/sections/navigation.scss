@@ -54,8 +54,6 @@
       text-transform: uppercase;
       text-decoration: none;
 
-
-
       @include onHover($white);
     }
   }
@@ -64,7 +62,6 @@
   
   &__checkbox {display: none;}
   &__checkbox:checked ~ .navbar {
-    // display: block;
     transform: scale(1);
     height: auto;
     margin-top: $sp-2;
@@ -79,7 +76,6 @@
     width: 46px;
     background: transparent;
     display: inline-block;
-    //padding: 4px;
     text-align: center;
     border: 3px solid $gray-mid;
     border-radius: 4px;
@@ -94,7 +90,6 @@
     position: relative;
     margin-top: 14px;
     
-
     &,
     &::before,
     &::after {
