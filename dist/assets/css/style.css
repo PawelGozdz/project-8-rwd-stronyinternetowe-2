@@ -410,8 +410,7 @@ ol, ul {
 .nav {
   background: #fff; }
   .nav__container {
-    padding: 0.4rem 0.4rem;
-    height: auto; }
+    padding: 0.4rem 0.4rem; }
   .nav .navbar {
     height: 0;
     transform: scale(0);
@@ -423,25 +422,34 @@ ol, ul {
         height: auto; } }
   .nav__list {
     display: flex;
-    flex-direction: column;
-    height: auto; }
+    flex-direction: column; }
     @media (min-width: 37.5em) {
       .nav__list {
         flex-direction: row;
-        height: 100%;
         justify-content: space-between;
         max-width: 60%; } }
   .nav__item {
-    margin: 1rem 0;
     border-bottom: 1px solid #f0f0f0ec;
-    height: auto; }
+    height: auto;
+    width: 100%;
+    text-align: center; }
+    .nav__item:not(:last-child) {
+      margin-bottom: 0.4rem; }
     @media (min-width: 37.5em) {
       .nav__item {
-        border-bottom: 0; } }
+        border-bottom: 0; }
+        .nav__item:not(:last-child) {
+          margin-bottom: 0;
+          margin-right: 0.4rem; } }
     .nav__item a {
       display: block;
+      padding: 1rem 0;
       text-transform: uppercase;
-      text-decoration: none; }
+      text-decoration: none;
+      background-color: #fff;
+      transition: all .2s; }
+      .nav__item a:hover {
+        background-color: #ededed; }
   .nav__checkbox {
     display: none; }
   .nav__checkbox:checked ~ .navbar {
