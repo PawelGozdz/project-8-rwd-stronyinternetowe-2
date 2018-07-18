@@ -32,12 +32,23 @@ h1 {
   font-size: 3.4rem;
 }
 
+.section-heading,
+.article-heading {
+  font-weight: normal;
+  text-align: center;
+}
+
 .section-heading {
   font-size: 2.8rem; 
-  margin: $sp-4 0;
+  margin: $sp-6 0 $sp-4;
+  
+  @include respond(big-desktop) {
+    margin: $sp-5 0;
+  }
 }
 
 .article-heading {
   font-size: 2rem;
   margin: $sp-3 0;
+  text-transform: capitalize;
 }

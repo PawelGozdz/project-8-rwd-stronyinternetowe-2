@@ -1,0 +1,31 @@
+.display {
+  height: 20rem;
+  background-image: linear-gradient( rgba($white, .75), rgba($white, .75)), url('../img/introwertyk.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  @include respond(tab-port) {
+    height: 25rem;
+  }
+
+  @include respond(tab-land) {
+    height: 30rem;
+  }
+  
+  &__container {
+    @extend .w-container;
+    height: 100%;
+    position: relative;
+  }
+
+  &__text {
+    display: inline-block;
+    margin: $sp-1;
+  }
+
+  &__button {
+    @include absCenter;    
+    text-align: center;
+  }
+}

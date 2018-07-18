@@ -1,0 +1,157 @@
+.info {
+  
+
+  &__container {
+    @extend .w-container;
+  }
+
+  &__box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: $sp-5;
+
+    @include respond(big-desktop) {
+      flex-direction: row;
+    }
+  }
+
+  //**************************************
+  // SERVICES
+  &__services {
+    display: flex;
+    flex-wrap: wrap;
+    
+    @include respond(big-desktop) {
+      width: 60%;
+    }
+  }
+
+  &__article {
+    text-align: center;
+    width: 100%;
+    padding: 1%;
+    margin-top: $sp-3;
+    margin-bottom: $sp-3;
+    font-size: 1.2rem;
+
+    @include respond(tab-port) {
+      width: 33%;
+    }
+  }
+
+  //**************************************
+  // HEXAGONS START
+
+  // Hexagon container
+  .hide {display: none;}
+  &__hexagon {
+    display: none;
+
+    
+    @include respond(big-desktop) {
+      display: flex;
+      width: 40%;
+    }
+
+
+  }
+
+  #grid {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0; /* Clears unordered list default of 40px */
+
+    li {
+      list-style-type: none;
+      position: relative;
+      float: left;
+      width: 27.85714285714286%;
+      padding: 0 0 32.16760145166612% 0;
+      -o-transform: rotate(-60deg) skewY(30deg);
+      -moz-transform: rotate(-60deg) skewY(30deg);
+      -webkit-transform: rotate(-60deg) skewY(30deg);
+      -ms-transform: rotate(-60deg) skewY(30deg);
+      transform: rotate(-60deg) skewY(30deg);
+      background: #fd005f;
+      overflow: hidden;
+      visibility: hidden;
+
+      &:nth-child(3n+2) {
+        margin: 0 1%;
+      }
+
+      &:nth-child(6n+4),
+      &:nth-child(6n+5),
+      &:nth-child(6n+6) {
+        margin-top: -6.9285714285%;
+        margin-bottom: -6.9285714285%;
+        -o-transform: translateX(50%) rotate(-60deg) skewY(30deg);
+        -moz-transform: translateX(50%) rotate(-60deg) skewY(30deg);
+        -webkit-transform: translateX(50%) rotate(-60deg) skewY(30deg);
+        -ms-transform: translateX(50%) rotate(-60deg) skewY(30deg);
+        transform: translateX(50%) rotate(-60deg) skewY(30deg);
+      }
+
+      &:nth-child(6n+4) { 
+        margin-left: 0.5%;
+      }
+
+      & * {
+        visibility: visible;
+      }
+    }
+  }
+
+  // Hexagon item inside li item
+  .hexagon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    //background: #fdbf00;
+    -o-transform: skewY(-30deg) rotate(60deg);
+    -moz-transform: skewY(-30deg) rotate(60deg);
+    -webkit-transform: skewY(-30deg) rotate(60deg);
+    -ms-transform: skewY(-30deg) rotate(60deg);
+    transform: skewY(-30deg) rotate(60deg);
+    overflow: hidden;
+    background-size: cover;
+
+    &__image {
+      position: relative;
+      height: 100%;
+      width: 100%;
+
+      img {
+        width:120%;
+        height: 100%;
+      }
+    }
+
+    &__cover {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      
+      &--1 { background-color: rgba($color1, .9);}
+      &--2 { background-color: rgba($color2, .8);}
+      &--3 { background-color: rgba($color3, .9);}
+    }
+  }
+
+  .clear:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+  //**************************************
+  // HEXAGONS END
+
+
+}

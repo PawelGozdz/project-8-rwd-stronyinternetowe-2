@@ -4,12 +4,17 @@
    background-image: linear-gradient( rgba($white, .75), rgba($white, .75)), url('../img/hero-4-big.jpg');
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center center;
 
   &__container {
-    @extend .w-container;
+    @extend .w-full;
     text-align: center;
 
     @include absCenter;
+  }
+
+  .btn--purple {
+    margin-top: $sp-2;
   }
 
 

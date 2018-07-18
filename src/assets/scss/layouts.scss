@@ -4,21 +4,25 @@ body {
 .w-container {
   max-width: $container;
   margin: 0 auto;
+  padding: 0 3%;
 }
 .w-full {
   width: 100%;
 }
 
 .wrapper {
-  @extend .w-full;
-  height: 100%;
+  height: auto;
 }
 
 // @extend w-full or w-container
+.wrapper,
 .nav ,
-.hero{
+.hero,
+.info,
+.display {
   @extend .w-full;
 }
+
 
 
 
