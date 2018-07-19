@@ -26,6 +26,8 @@ ol, ul {
   background-color: $gray-dark;
   color: $white;
   transition: all .2s;
+  text-transform: uppercase;
+  border-radius: 3px;
   
   &:hover {
     border: 2px solid $gray-dark;

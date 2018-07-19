@@ -58,6 +58,18 @@
       @include onHover($white);
     }
   }
+
+  .is-active {
+    background-color: $gray-dark;
+    color: $white;
+    
+    @include respond(tab-port) {
+      background-color: transparent;
+      color: $gray-dark;
+      border: 2px solid $gray-dark;
+      
+    }
+  }
   
   // Hamburger menu toggler
   
