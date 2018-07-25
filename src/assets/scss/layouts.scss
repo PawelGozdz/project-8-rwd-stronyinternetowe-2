@@ -24,7 +24,8 @@ body {
 .articles,
 .description,
 .faq,
-.about {
+.about,
+.contact {
   @extend .w-full;
 }
 

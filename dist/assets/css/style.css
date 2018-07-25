@@ -311,7 +311,7 @@ $breakpoint argument choices:
 - tab-land
 - big-desktop
 */
-.w-container, .nav__container, .info__container, .display__container, .services__list, .services__bar, .faq__container, .articles__container, .about__container, .footer__container {
+.w-container, .nav__container, .info__container, .display__container, .services__list, .services__bar, .faq__container, .articles__container, .about__container, .contact__container, .footer__container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 3%; }
@@ -325,7 +325,8 @@ $breakpoint argument choices:
 .articles,
 .description,
 .faq,
-.about, .hero__container {
+.about,
+.contact, .hero__container, .mapa {
   width: 100%; }
 
 .wrapper {
@@ -442,7 +443,7 @@ ol, ul {
   margin: 0;
   list-style-type: none; }
 
-.btn {
+.btn, .contact .btn {
   text-decoration: none;
   padding: 0.4rem 0;
   border: 2px solid transparent;
@@ -459,10 +460,10 @@ ol, ul {
     box-shadow: 0 4px 28px -3px #222222;
     background-color: transparent;
     color: #222222; }
-  .btn::before {
+  .btn::before, .contact .btn::before {
     content: '---';
     margin: 0.4rem 1rem; }
-  .btn::after {
+  .btn::after, .contact .btn::after {
     content: '---';
     margin: 0.4rem 1rem; }
 
@@ -964,6 +965,61 @@ ol, ul {
   margin: 1rem;
   margin-left: 0;
   display: inline-block; }
+
+.contact {
+  margin-bottom: 3.6rem; }
+  .contact__box {
+    display: inline-block;
+    width: 100%;
+    vertical-align: top; }
+    @media (min-width: 37.5em) {
+      .contact__box {
+        width: 49.5%;
+        margin: 0; } }
+    .contact__box address > p {
+      text-align: center; }
+  .contact__text {
+    margin: 1.6rem; }
+  .contact form, .contact .form-group, .contact textarea {
+    border: 2px solid #222222; }
+  .contact form {
+    padding: 0.4rem; }
+  .contact .form-group {
+    width: 100%;
+    padding: 0 0.4rem;
+    height: auto;
+    margin-bottom: 1rem; }
+    .contact .form-group label {
+      display: inline-block;
+      vertical-align: top;
+      margin-top: .3rem; }
+    .contact .form-group input {
+      width: 80%;
+      float: right;
+      margin: 2px 0;
+      height: 1.6rem;
+      background-color: #f0f0f0ec; }
+    .contact .form-group::after {
+      content: '';
+      clear: both;
+      display: table; }
+  .contact textarea {
+    display: block;
+    width: 100%;
+    background-color: #f0f0f0ec;
+    margin-bottom: 1rem; }
+  .contact .btn {
+    width: 100%; }
+    @media (min-width: 75em) {
+      .contact .btn {
+        max-width: 35%; } }
+
+.mapa {
+  height: 10rem; }
+  .mapa iframe {
+    height: 100%;
+    width: 100%;
+    border: none; }
 
 .footer {
   padding: 1rem; }

@@ -1,0 +1,93 @@
+.contact {
+  margin-bottom: $sp-5;
+
+  &__container {
+    @extend .w-container;
+  }
+
+  &__box {
+    display: inline-block;
+    width: 100%;
+    vertical-align: top;
+    
+    @include respond(tab-port) {
+      width: 49.5%;
+      margin: 0;
+    }
+
+    address > p {
+      text-align: center;
+    }
+  }
+
+  &__text {
+    margin: $sp-3;
+  }
+
+  form, .form-group, textarea {
+    border: 2px solid $gray-dark;
+  }
+
+  form {
+    padding: $sp-1;
+  }
+
+
+  .form-group {
+    width: 100%;
+    padding: 0 $sp-1;
+    height: auto;
+    margin-bottom: $sp-2;
+
+    label {
+      display: inline-block;
+      vertical-align: top;
+      margin-top: .3rem;
+    }
+    
+    
+    input {
+      width: 80%  ;
+      float: right;
+      margin: 2px 0;
+      height: 1.6rem;
+      background-color: $gray-light;
+    }
+    
+    &::after {
+      content: '';  
+      clear: both;
+      display: table;
+    }
+  }
+  
+  textarea {
+    display: block;
+    width: 100%;
+    background-color: $gray-light;
+    margin-bottom: $sp-2;
+  }
+
+  .btn {
+    @extend .btn;
+    width: 100%;
+
+    @include respond(big-desktop) {
+      max-width: 35%;
+    }
+  }
+
+}
+
+
+
+.mapa {
+  @extend .w-full;
+  height: 10rem;
+
+  iframe {
+    height: 100%;
+    width: 100%;
+    border: none;
+  }
+}
