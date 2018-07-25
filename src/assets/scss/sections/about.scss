@@ -1,0 +1,23 @@
+.about {
+
+
+  &__container {
+    @extend .w-container;
+  }
+
+  &__text {
+    margin-top: $sp-2;
+    margin-bottom: $sp-1;
+    text-align: justify;
+  }
+
+  .btn {
+    margin: $sp-2;
+    margin-left: 0;
+    display: inline-block;
+
+    @include respond(tab-port) {
+
+    }
+  }
+}

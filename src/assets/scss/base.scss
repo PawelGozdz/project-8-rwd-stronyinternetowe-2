@@ -6,6 +6,10 @@
   box-sizing: inherit;
 }
 
+*:focus {
+  outline: none;
+}
+
 body {
   box-sizing: border-box;
   background: $white;

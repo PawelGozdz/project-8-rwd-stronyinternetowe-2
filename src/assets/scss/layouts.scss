@@ -20,7 +20,11 @@ body {
 .hero,
 .info,
 .display,
-.footer {
+.footer,
+.articles,
+.description,
+.faq,
+.about {
   @extend .w-full;
 }
 

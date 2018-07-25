@@ -13,25 +13,25 @@
     <meta charset="UTF-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <META NAME="author" CONTENT="RWD Strony Internetowe">
-    <meta NAME="subject" CONTENT="Strony Internetowe">
+    <meta name="author" content="RWD Strony Internetowe">
+    <meta name="subject" content="Strony Internetowe">
     
-    <meta NAME="Description" CONTENT="Tworzenie interaktywnych i responsywnych stron WWW dopasowanych do wszystkich urządzeń. Starachowice, Skarżysko Kamienna, Ostrowiec Świętokrzyski">
+    <meta name="description" content="Dowiedz się więcej, jakie usługi są w naszym zakresie. Nowe strony, projektowanie i kodowanie, odświeżanie, dodawanie i zmiana elementów oraz zdjęć, pozycjonowanie SEO i współpraca">
 
-    <meta NAME="Classification" CONTENT="Analiza potrzeb klienta, jego produktów i produktów jego konkurencji, UX/UI Design - preferencje i wygląd, development, wdrażanie i hosting. Zmiana wyglądu oraz funkcjonalności strony">
-    <meta NAME="Keywords" CONTENT="Strony internetowe, Responsywność, SEO, strony WWW, sklepy internetowe">
-    <meta NAME="Geography" CONTENT="Starachowice, Polska">
-    <meta NAME="Language" CONTENT="Polski">
-    <meta NAME="Copyright" CONTENT="RWD Strony Internetowe">
-    <meta NAME="Designer" CONTENT="RWD Strony Internetow">
-    <meta NAME="Publisher" CONTENT="RWD Strony Internetowe">
-    <meta NAME="distribution" CONTENT="Local">
-    <meta NAME="zipcode" CONTENT="27-200">
-    <meta NAME="city" CONTENT="Starachowice">
-    <meta NAME="country" CONTENT="Polska">
-    <META NAME="Robots" CONTENT="INDEX,FOLLOW">
+    <meta name="Classification" content="Współpraca w zakresie działania strony internetowej, budowa nowej, naprawa starej oraz wymiana niechcianych elementów na stronie, dodawanie wyglądu do telefonów komórkowych i tabletów, dodawanie slajderów, form kontaktowych, zmiana kolorystyki, poprawianie szybkości oraz wiele innych">
+    <meta name="Keywords" content="Strony internetowe, Responsywność, SEO, strony WWW, współpraca, usługi, Starachowice, Skarżysko Kamienna, Ostrowiec Świętokrzyski">
+    <meta name="Geography" content="Starachowice, Polska">
+    <meta name="Language" content="Polski">
+    <meta name="Copyright" content="RWD Strony Internetowe">
+    <meta name="Designer" content="RWD Strony Internetow">
+    <meta name="Publisher" content="RWD Strony Internetowe">
+    <meta name="distribution" content="Local">
+    <meta name="zipcode" content="27-200">
+    <meta name="city" content="Starachowice">
+    <meta name="country" content="Polska">
+    <META name="Robots" content="INDEX,FOLLOW">
     
-    <title>Tworzenie stron WWW - Starachowice</title>
+    <title>Usługi - Nowa strona WWW, optymalizacja starej, współpraca, SEO</title>
     
     <link itemprop="sameAs" href="https://www.facebook.com/RWD-Strony-Internetowe-166162234067461/">
     <link itemprop="sameAs" href="https://github.com/PawelGozdz/rwd-stronyinternetowe">
@@ -102,8 +102,10 @@
           <ul class="nav__list nav__list--pages">
             <li class="nav__item"><a href="index.html">Strona Główna</a></li>
             <li class="nav__item"><a href="services.html" class=" is-active">Usługi</a></li>
+            <li class="nav__item"><a href="faq.html">FAQ</a></li>
             <li class="nav__item"><a href="about.html">O Firmie</a></li>
             <li class="nav__item"><a href="contact.html">Kontakt</a></li>
+            <li class="nav__item"><a href="developer.html">Developer</a></li>
           </ul>
     
           <!-- <ul class="nav__list nav__list--dev">
@@ -135,8 +137,8 @@
             
             <li class="services__item">
               <a href="#" class="services__link">
-                <img src="./assets/img/responsywnosc.svg" alt="Odświeżanie starej strony" class="services__icon" title="Odświeżanie">
-                <h5 class="box-heading">Nowe życie</h5>
+                <img src="./assets/img/responsywnosc.svg" alt="Optymalizacja starej strony" class="services__icon" title="Optymalizacja">
+                <h5 class="box-heading">Optymalizacja</h5>
               </a>
             </li>
             
@@ -161,29 +163,178 @@
             </li>
           </ul>
         </nav>
+        <!-- END SECTION NAVIGATION -->
 
-        <h4 class="article-heading">Wybierz opcje, które cię interesują</h4>
+        <!-- ******************************** -->
+        <!--DYNAMIC BAR WITH SELECTED TAGS -->
+        <h2 class="article-heading">Wybierz co Cię interesuje</h2>
         <div class="services__bar">
           <div class="services__options">
-            <span class="services__option">
+            <span class="services__option services__option--nowa">
               <span class="services__text">Nowa strona</span>
-              <span class="services__close">x</span>
+              <span class="services__close"></span>
             </span>
-            <span class="services__option">
-              <span class="services__text">Nowe życie</span>
-              <span class="services__close">x</span>
+            <span class="services__option services__option--optymalizacja">
+              <span class="services__text">Optymalizacja</span>
+              <span class="services__close"></span>
             </span>
-            <span class="services__option">
+            <span class="services__option services__option--seo">
               <span class="services__text">Pozycjonowanie</span>
-              <span class="services__close">x</span>
+              <span class="services__close"></span>
             </span>
-            <span class="services__option">
+            <span class="services__option services__option--wspolpraca">
               <span class="services__text">Współpraca</span>
-              <span class="services__close">x</span>
+              <span class="services__close"></span>
             </span>
           </div>
         </div>
       </div>
+      <!-- END DYNAMIC BAR WITH SELECTED TAGS -->
+      
+      <!-- ******************************** -->
+      <!-- SECTION FAQ -->
+      <div class="faq__info">
+        <h2 class="faq__header"><a href="faq.html">Masz jakieś pytania? Kliknij i przejdź do sekcji FAQ</a></h2>
+      </div>
+      <!-- SECTION FAQ -->
+      
+      <!-- ******************************** -->
+      <!--ARTICLES START -->
+      <section class="articles">
+        <div class="articles__container">
+          <h4>Wątki powiązane z wybranym przez Ciebie tematem:</h4>
+          <ul class="articles__list">
+            <li class="articles__item">
+              <article class="articles__box">
+                <h3 class="articles-heading">Responsywność</h3>
+                <div class="articles__sub">
+                  <h5 class="articles__subheading">Kategoria:</h5>
+                  <div class="articles__categories">
+                    <span class="articles__category articles__category--nowa">Nowa strona</span><span class="articles__category articles__category--stara">Optymalizacja</span><span class="articles__category articles__category--seo">Pozycjonowanie</span><span class="articles__category articles__category--wspolpraca">Współpraca</span>
+                  </div>
+                </div>
+                <p class="articles__text">Obecnie ponad polowa uzytkowników odzwiedza strony WWW na telefonach komórkowych. Idealnie, jak ta dobrze wygląda i na komputerach i smartfonach.</p>    
+                <p class="articles__text">Istotne w optymalizacji SEO</p>
+              </article>
+            </li>
+            
+            <li class="articles__item">
+              <article class="articles__box">
+                <h3 class="articles-heading">Pozycjonowanie SEO</h3>
+                <div class="articles__sub">
+                  <h5 class="articles__subheading">Kategoria:</h5>
+                  <div class="articles__categories">
+                    <span class="articles__category articles__category--nowa">Nowa strona</span>
+                    <span class="articles__category articles__category--stara">Optymalizacja</span>
+                    <span class="articles__category articles__category--seo">Pozycjonowanie</span>
+                    <span class="articles__category articles__category--wspolpraca">Współpraca</span>
+                  </div>
+                </div>
+                <p class="articles__text"><strong>75%</strong> użytkowników znajduje informacje w Google. Wysokość strony internetowej w wynikach wyszukiwania przekłada się na ilość potencjalnych klientów. Optymalizacja SEO pozwala zaistnieć w internecie.</p>
+              </article>
+            </li>
+
+            <li class="articles__item">
+              <article class="articles__box">
+                <h3 class="articles-heading">Social Media</h3>
+                <div class="articles__sub">
+                  <h5 class="articles__subheading">Kategoria:</h5>
+                  <div class="articles__categories">
+                    <span class="articles__category articles__category--nowa">Nowa strona</span>
+                    <span class="articles__category articles__category--stara">Optymalizacja</span>
+                  </div>
+                </div>
+                <p class="articles__text">Integracja Facebooka oraz Tweetera nie jest już zaledwie dodatkiem, a w wielu przypadkach głównym narzędziem komunikacji z klientami.</p>
+              </article>
+            </li>
+
+            <li class="articles__item">
+              <article class="articles__box">
+                <h3 class="articles-heading">Prędkość</h3>
+                <div class="articles__sub">
+                  <h5 class="articles__subheading">Kategoria:</h5>
+                  <div class="articles__categories">
+                    <span class="articles__category articles__category--nowa">Nowa strona</span>
+                    <span class="articles__category articles__category--stara">Optymalizacja</span>
+                    <span class="articles__category articles__category--seo">Pozycjonowanie</span>
+                    <span class="articles__category articles__category--wspolpraca">Współpraca</span>
+                  </div>
+                </div>
+                <p class="articles__text"><strong>3 sekundy</strong> to tyle, aby klient zdecydował czy chce zostać dłużej na naszej stronie. Jeżeli ta jest wolna, ponad połowa idzie gdzie indziej.</p>
+              </article>
+            </li>
+
+            <li class="articles__item">
+              <article class="articles__box">
+                <h3 class="articles-heading">UX</h3>
+                <div class="articles__sub">
+                  <h5 class="articles__subheading">Kategoria:</h5>
+                  <div class="articles__categories">
+                    <span class="articles__category articles__category--nowa">Nowa strona</span><span class="articles__category articles__category--wspolpraca">Współpraca</span>
+                  </div>
+                </div>
+                <p class="articles__text">Intuicyjność oraz łatwość obsługi strony internetowej. Jest to coś, co odróżnia dobrą stronę od kiepskiej. Na tej dobrej użytkownik jest zachęcany do działan i nie czuje przymusu przebywania na niej.</p>
+              </article>
+            </li>
+
+            <li class="articles__item">
+              <article class="articles__box">
+                <h3 class="articles-heading">Analityka</h3>
+                <div class="articles__sub">
+                  <h5 class="articles__subheading">Kategoria:</h5>
+                  <div class="articles__categories">
+                    <span class="articles__category articles__category--nowa">Nowa strona</span><span class="articles__category articles__category--stara">Optymalizacja</span>
+                    <span class="articles__category articles__category--seo">Pozycjonowanie</span>
+                    <span class="articles__category articles__category--wspolpraca">Współpraca</span>
+                  </div>
+                </div>
+                <p class="articles__text">Strony internetowe się ciągle zmieniają.</p>
+                <p class="articles__text">Analiza zmian oraz wprowadzanie regularnych poprawek jest kluczowe, by nie pozostać w tyle.</p>
+              </article>
+            </li>
+
+            <li class="articles__item">
+              <article class="articles__box">
+                <h3 class="articles-heading">Projekt graficzny</h3>
+                <div class="articles__sub">
+                  <h5 class="articles__subheading">Kategoria:</h5>
+                  <div class="articles__categories">
+                    <span class="articles__category articles__category--nowa">Nowa strona</span><span class="articles__category articles__category--stara">Optymalizacja</span>
+                  </div>
+                </div>
+                <p class="articles__text">Indywidualny projekt graficzny dla każdego klienta.</p>
+              </article>
+            </li>
+
+            <li class="articles__item">
+              <article class="articles__box">
+                <h3 class="articles-heading">Zmiany na stronie</h3>
+                <div class="articles__sub">
+                  <h5 class="articles__subheading">Kategoria:</h5>
+                  <div class="articles__categories">
+                    <span class="articles__category articles__category--stara">Optymalizacja</span> 
+                    <span class="articles__category articles__category--seo">Pozycjonowanie</span> 
+                    <span class="articles__category articles__category--wspolpraca">Współpraca</span> 
+                  </div>
+                </div>
+                <p class="articles__text">Zmiana czegoś, co już jest, lub dodanie nowego.</p>
+                <ul class="articles__ul">
+                  <li class="articles__li">Menu</li>
+                  <li class="articles__li">Slider</li>
+                  <li class="articles__li">Tekst</li>
+                  <li class="articles__li">Zdjęcia i filmy</li>
+                  <li class="articles__li">Dane kontaktowe</li>
+                  <li class="articles__li">Galeria</li>
+                  <li class="articles__li">Mapa</li>
+                </ul>
+              </article>
+            </li>
+
+          </ul>
+        </div>
+      </section>
+      <!--ARTICLES END -->
+
 
     </main>
     <!-- End Main -->

@@ -26,8 +26,8 @@
     @include respond(tab-port) {
       flex-direction: row;
       justify-content: space-between;
-      max-width: 60%;
     }
+    
   }
 
   &__item {
