@@ -18,13 +18,21 @@
   // HERO - index.html
   &--index {
     height: 90vh;
-    background-image: linear-gradient( rgba($white, .75), rgba($white, .75)), url('../img/hero-4-big.jpg');
+    background-image: linear-gradient( rgba($white, .75), rgba($white, .75)), url('../img/hero-3-small.jpg');
+    
+    @include respond(tab-land) {
+      background-image: linear-gradient( rgba($white, .75), rgba($white, .75)), url('../img/hero-3-big.jpg');
+    }
   }
 
-  // HERO - developer.html
+  // HERO - developer and contact
   &--developer {
     height: 50vh;
-    background-image: linear-gradient( rgba($white, .75), rgba($white, .75)), url('../img/hero-4-big.jpg');
+    background-image: linear-gradient( rgba($white, .75), rgba($white, .75)), url('../img/hero-4-small.jpg');
+
+    @include respond(tab-land) {
+      background-image: linear-gradient( rgba($white, .75), rgba($white, .75)), url('../img/hero-4-big.jpg');
+    }
   }
 
 }

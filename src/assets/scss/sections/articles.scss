@@ -63,6 +63,16 @@
     margin: $sp-2 0;
     font-size: 1.7rem;
     display: inline-block;
+    vertical-align: top;
+  }
+  
+  &__img {
+    display: inline-block;
+    vertical-align: top;
+    height: 3rem;
+    width: 3rem;
+    margin-top: 0;
+    margin-left: $sp-1;
   }
 
 
