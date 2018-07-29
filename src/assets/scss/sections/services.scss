@@ -63,7 +63,7 @@
 
   &__bar {
     @extend .w-container;
-    display: inline-block;
+    display: none;
     padding: 0;
     border: 2px solid $gray-dark;
     border-radius: 20px;
@@ -97,7 +97,7 @@
       background-color: $color5;
     }
     
-    &--seo {
+    &--pozycjonowanie {
       background-color: $color3;
     }
     
