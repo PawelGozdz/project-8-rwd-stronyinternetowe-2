@@ -1,6 +1,7 @@
 .articles {
   background-color: $white;
   margin-top: $sp-6;
+  display: none;
 
   &__container {
     @extend .w-container;
@@ -24,7 +25,7 @@
   }
 
   &__item {
-    display: block;
+    display: none;
     width: 100%;
     margin: $sp-1 auto;  
     float: left;
@@ -33,13 +34,13 @@
 
         
     @include respond(tab-port) {
-      display: inline-block;
+      display: none;
       width: 49.5%;
       margin: $sp-2 0;
     }
 
     @include respond(tab-land) {
-      display: inline-block;
+      display: none;
       width: 33%;
     }
   }
@@ -105,10 +106,10 @@
     &--nowa {
       background-color: $color1;
     }
-    &--stara {
+    &--optymalizacja {
       background-color: $color5;
     }
-    &--seo {
+    &--pozycjonowanie {
       background-color: $color3;
     }
     &--wspolpraca {

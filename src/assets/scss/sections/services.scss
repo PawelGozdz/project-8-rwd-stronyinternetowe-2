@@ -86,8 +86,8 @@
     display: inline-block;
     margin: $sp-1;
     padding: $sp-1 $sp-2;
-    cursor: pointer;
-    box-shadow: 0 2px 4px $gray-dark;
+    //cursor: pointer;
+    //box-shadow: 0 2px 4px $gray-dark;
     
     &--nowa {
       background-color: $color1;
@@ -105,14 +105,14 @@
       background-color: $color4;
     }
 
-    &:hover {
-      box-shadow: 0 2px 8px $gray-dark;
-    }
+    // &:hover {
+    //   box-shadow: 0 2px 8px $gray-dark;
+    // }
 
-    &:active,
-    &:focus {
-      transform: translateY(2px);
-    }
+    // &:active,
+    // &:focus {
+    //   transform: translateY(2px);
+    // }
   }
 
   &__text {

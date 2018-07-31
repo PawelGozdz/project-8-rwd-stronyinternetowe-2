@@ -787,9 +787,7 @@ ol, ul {
     border-radius: 10px;
     display: inline-block;
     margin: 0.4rem;
-    padding: 0.4rem 1rem;
-    cursor: pointer;
-    box-shadow: 0 2px 4px #222222; }
+    padding: 0.4rem 1rem; }
     .services__option--nowa {
       background-color: #9d6aa3; }
     .services__option--optymalizacja {
@@ -798,10 +796,6 @@ ol, ul {
       background-color: #5994f0; }
     .services__option--wspolpraca {
       background-color: #ff8164; }
-    .services__option:hover {
-      box-shadow: 0 2px 8px #222222; }
-    .services__option:active, .services__option:focus {
-      transform: translateY(2px); }
   .services__text {
     display: inline-block;
     height: 100%;
@@ -891,7 +885,8 @@ ol, ul {
 
 .articles {
   background-color: #fff;
-  margin-top: 4.8rem; }
+  margin-top: 4.8rem;
+  display: none; }
   .articles h4 {
     margin-left: 0.4rem; }
   .articles__list {
@@ -904,19 +899,19 @@ ol, ul {
       display: table;
       clear: both; }
   .articles__item {
-    display: block;
+    display: none;
     width: 100%;
     margin: 0.4rem auto;
     float: left;
     padding: 0.4rem; }
     @media (min-width: 37.5em) {
       .articles__item {
-        display: inline-block;
+        display: none;
         width: 49.5%;
         margin: 1rem 0; } }
     @media (min-width: 56.25em) {
       .articles__item {
-        display: inline-block;
+        display: none;
         width: 33%; } }
   .articles__box {
     background: #f0f0f0;
@@ -957,9 +952,9 @@ ol, ul {
     color: #fff; }
     .articles__category--nowa {
       background-color: #9d6aa3; }
-    .articles__category--stara {
+    .articles__category--optymalizacja {
       background-color: #4bd685; }
-    .articles__category--seo {
+    .articles__category--pozycjonowanie {
       background-color: #5994f0; }
     .articles__category--wspolpraca {
       background-color: #ff8164; }
@@ -1025,12 +1020,17 @@ ol, ul {
     display: block;
     width: 100%;
     background-color: #f0f0f0;
-    margin-bottom: 1rem; }
+    margin-bottom: 1rem;
+    padding: 0.4rem; }
   .contact .btn {
     width: 100%; }
     @media (min-width: 75em) {
       .contact .btn {
         max-width: 35%; } }
+
+.message {
+  margin: 1rem;
+  display: inline-block; }
 
 .mapa {
   height: 10rem; }

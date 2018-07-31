@@ -1,9 +1,5 @@
 /*
-1. Add Listeners on page load to buttons
-2. Grab all buttons
-3. Display 'h2 element'
-4. Grab all article elements
-4. 
+ 
 */
 // Main cotrol object
 const state = {};
@@ -11,10 +7,13 @@ const state = {};
 // ELEMENTS
 const elements = {
   category: document.querySelectorAll('.services__link'),
-  servicesOption: document.querySelectorAll('.services__option'),
+  servicesOptionItem: 'services__option',
+  servicesOption: document.querySelectorAll(this.servicesOptionItem),
   servicesOptions: document.querySelector('.services__options'),
   servicesBar: document.querySelector('.services__bar'),
-  boxHeading: document.querySelectorAll('.box-heading')
+  boxHeading: document.querySelectorAll('.box-heading'),
+  articlesSection: document.querySelector('.articles'),
+  articlesList: document.querySelectorAll('.articles__item')
 };
 
 // Chosen category
@@ -28,7 +27,7 @@ class Category {
       this.categories.push(category);
     } else if((category == 'Pokaż wszystko' || category == 'Ukryj wszystko') && this.categories.length == elements.boxHeading.length -1) {
       this.categories = [];
-    } else  {
+    }  else  {
       this.categories = [];
       if(this.categories.length == 0) {
         elements.boxHeading.forEach(el => {
@@ -38,7 +37,6 @@ class Category {
         });
       }
     } 
-
   }
 
   deleteCategory(category) {
@@ -51,108 +49,290 @@ class Category {
 class Option {
   constructor(category) {
     this.category = category;
-    this.optionsArr = [];
   }
 
-  adjustClassName(category) {
-    const polish = ['ą', 'ę', 'ć', 'ł', 'ó', 'ź', 'ż'];
-    const english = ['a', 'e', 'c', 'l', 'o', 'z', 'z'];
-    let replaced = category;
-    // Replacing polish letters
-    for(let i = 0; i < replaced.length; i++){
-      if(polish.indexOf(replaced[i]) !== -1) {
-        const index = polish.indexOf(replaced[i]);
-        replaced = replaced.replace(polish[index], english[index]);
-      }
-    }
-     const fixedCategory = replaced.split(' ')[0].toLowerCase();
+  createElement(category) {
 
-     // Returning the first word od the string, with polish letters replaced and in lower letters
-     return fixedCategory;
-  }
+    const spanText = document.createElement('span');
+    spanText.className = 'services__text';
+    spanText.textContent = `${category}`;
 
-  addOption(category) {
-    const option = `
-    <span class="services__option services__option--${this.adjustClassName(category)}">
-      <span class="services__text">${category}</span>
-      <span class="services__close"></span>
-    </span>
-  `;
+    const spanClose = document.createElement('span');
+    spanClose.className = "services__close";
+
+    const span = document.createElement('span');
+    span.className = `services__option  services__option--${adjustClassName(category)}`;
+
+    span.appendChild(spanText);
+    //span.appendChild(spanClose);
+
+  //   const optionItem = `
+  //   <span class="services__option services__option--${adjustClassName(category)}">
+  //     <span class="services__text">${category}</span>
+  //     <span class="services__close"></span>
+  //   </span>
+  // `;
     
-    return option;
+    return {
+      optionItem: span,
+      cssClassModifier: adjustClassName(category)
+    };
   };
 
-  removeOption() {
-    console.log('Remove from list');
-  };
 };
 
-const selectCategories = (e) => {
-  const selectedCategory = e.target.closest('.services__link').querySelector('.box-heading').textContent;
+const selectCategories = (categoryName, updatedList) => {
+  let rightOne = '';
 
-  if(!state.categories) {
+  // if(!selectedCategory)
+
+  if(!state.categories || !updatedList) {
+    console.log(updatedList);
     const newObjCategory = new Category();
     state.categories = newObjCategory;
-    newObjCategory.addCategory(selectedCategory);
+    newObjCategory.addCategory(categoryName);
   } else {
-    if(state.categories.categories.indexOf(selectedCategory) > -1) {
-      state.categories.deleteCategory(selectedCategory);;
+    if(state.categories.categories.indexOf(categoryName) > -1) {
+      state.categories.deleteCategory(categoryName);
     } else {
-      state.categories.addCategory(selectedCategory);
+      state.categories.addCategory(categoryName);
     }
   }
 };
 
-const printOptions = (selectedCategories) => {
+const adjustClassName = (category) => {
+  const polish = ['ą', 'ę', 'ć', 'ł', 'ó', 'ź', 'ż'];
+  const english = ['a', 'e', 'c', 'l', 'o', 'z', 'z'];
+  let replaced = category;
+  // Replacing polish letters
+  for(let i = 0; i < replaced.length; i++){
+    if(polish.indexOf(replaced[i]) !== -1) {
+      const index = polish.indexOf(replaced[i]);
+      replaced = replaced.replace(polish[index], english[index]);
+    }
+  }
+   const fixedCategory = replaced.split(' ')[0].toLowerCase();
+
+   // Returning the first word of the string in lower letters, with polish letters replaced
+   return fixedCategory;
+};
+
+const createElements = (selectedCategories) => {
+  state.optionElements = [];
 
   if(selectedCategories.length > 0) {
     elements.servicesBar.style.display = 'inline-block';
     let selectedList = '';
     selectedCategories.forEach((el, index) => {
       const category = new Option(el);
-      const element = category.addOption(el);
-      selectedList += element;
-
-      // Deleting alreay listed and replacing with the new ones
-      elements.servicesOptions.innerHTML = '';
-      // Inserting HTML
-      elements.servicesOptions.insertAdjacentHTML('beforeend', selectedList);
-
+      const element = category.createElement(el);
+      state.optionElements.push(element);
     });
   } else {
     elements.servicesBar.style.display = 'none';
   }
 };
 
-Array.from(elements.servicesOption).forEach(el => {
-  el.addEventListener('click', Option.removeOption)
-});
+// Adding listeners to newly created options in the bar
+// const addClickToOption = (categories) => {
+//   const items = Array.from(document.querySelectorAll('.services__option'));
+//   items.forEach(el => {
+//     el.addEventListener('click', (e) => {
+//       const click = e.target.closest('div .services__option');
+//       const clickToDelete = click.children[0].textContent;
+//       console.log('This category needs to be removed: ' + clickToDelete);
+//       console.log(categories);
+      
 
+//       state.categories.deleteCategory(clickToDelete);
+//       console.log(state.categories);
+//       //selectCategories(clickToDelete);
+      
+//     });
+//   });
+// };
 
+// Display LI elements based on categories input
+const displayArticles = (categories) => {
+  const allArticles = document.querySelectorAll('.articles__categories');
+
+  // Chowanie calej listy po kazdym kliknieciu by ja wyswietlic pozniej zaleznie od wybranych opcji
+  Array.from(allArticles).forEach(el => {
+    el.parentElement.parentElement.parentElement.style.display = 'none';
+  });
+
+  if(state.categories.categories.length !== 0) {
+    elements.articlesSection.style.display = 'block';
+    // Petla przez div z klasa .articles__categories
+    Array.from(allArticles).forEach(div => {
+      // Pobranie jego klass
+      Array.from(div.children).forEach(element => {
+        // pobranie klass z categiries
+        Array.from(categories).forEach(category => {
+          // porownanie o
+          if(element.classList.contains(`articles__category--${adjustClassName(category)}`)) {
+            const toDisplay = document.querySelectorAll(`.articles__category--${adjustClassName(category)}`);
+            Array.from(toDisplay).forEach(li => {
+              // jezeli jest ok, to wyswietl te klasy
+              li.closest('ul li').style.display = 'inline-block';
+            });
+          }
+        });
+      });
+    });
+  } else {
+    // Jezeli state.categories.categories jest puste, schowaj wszystkie elementy
+    elements.articlesSection.style.display = 'none';
+  }
+};
+
+const appInit = (e) => {
+  // Reading category name and passing it as an argument to selectCategorues function
+  const categoryName = e.target.closest('.services__link').querySelector('.box-heading').textContent;
+  // Read categories and asign them to state obj
+  selectCategories(categoryName, state.categories);
+  
+  // Create state css classes obj
+  //cssClasses(state.categories.categories);
+  
+  // Create options elements
+  createElements(state.categories.categories);
+  
+  // Prepare UI for the options
+  elements.servicesOptions.innerHTML = '';
+  
+  // Insert options into the Bar
+  state.optionElements.forEach(el => {
+    elements.servicesOptions.appendChild(el.optionItem);
+    // elements.servicesOptions.insertAdjacentHTML('beforeend', el.optionItem);
+  });
+  
+  // Adding event listeners to the options in the bar
+  //const newCategories =  addClickToOption(state.categories.categories);
+  //console.log(newCategories);
+
+  
+  // Po clicku do zwrocic reszte listy oraz uaktualnic state.categories.categories
+  
+  
+  // Select articles based on what user has selected
+  displayArticles(state.categories.categories);
+  //
+}
 
 
 /* MAIN CONTROLLER */
-Array.from(elements.category).forEach(el => {
-  el.addEventListener('click', (e) => {
-    // Choose categories
-    selectCategories(e);
-
-    // Get options from the state.categories
-    const selectedCategories = state.categories.categories;
-    console.log(selectedCategories);
-
-    // Print options in the bar
-    printOptions(selectedCategories);
-
-    // Return  new selectedCategories
-    // updateOptions(selectedCategories);
-    
-    // Delete category by clicking an option
-    // removeOption();
-
-    // Select articles based on what user has selected
-
+const init = () => {
+  // Run app by clicking category
+  Array.from(elements.category).forEach(el => {
+    el.addEventListener('click', appInit);
   });
-});
 
-/* END MAIN CONTROLLER */
+  // Run app aby clicking opton button
+  // Array.from(document.querySelectorAll('.services__option')).forEach(el => {
+  //   el.addEventListener('click', appInit);
+  // });
+};
+
+init();
+  
+  /* END MAIN CONTROLLER */
+  
+  
+/**FORM VALIDATION */
+
+function validateForm(e) {
+  e.preventDefault();
+
+  const name = document.querySelector('#contact-form input[name="name"]');
+  const email = document.querySelector('#contact-form input[name="email"]');
+  const textarea = document.querySelector('#contact-form textarea');
+  const reg = /^([A-Za-z0-9_\-\.]){1,}\@([A-Za-z0-9_\-\.]){1,}\.([A-Za-z0-9]){2,4}$/;
+  const checkedEmail = reg.test(email.value);
+  const check = [];
+  const elements = [];
+
+  // NAME
+  if(name.value) {
+    elements.push(name);
+    check.push(true);
+  } else {
+    elements.push(name);
+    check.push(false);
+  }
+  
+  // EMAIL
+  if(checkedEmail) {
+    elements.push(email);
+    check.push(true);
+  } else {
+    elements.push(email);
+    check.push(false);
+  }
+  
+  // TEXTAREA
+  if(textarea.value) {
+    elements.push(textarea);
+    check.push(true);
+  } else {
+    elements.push(textarea);
+    check.push(false);
+  }
+  validationMessage(check, elements);
+}
+
+function validationMessage(boolArr, elementArr) {
+  const p = document.createElement('p');
+  const successMsg = 'Wiadomość wysłana!';
+  const invalidFieldMsg = 'Czerwone pola są wymagane';
+  const failureMsg = 'Nie udało się wysłać wiadomości. Spróbuj zadzwonić pod numer 510 502 081!';
+
+  boolArr.forEach((bool, index) => {
+    if(bool == true) {
+      elementArr[index].style.border = '1px solid green'
+    } else if(bool == false) {
+      elementArr[index].style.border = '1px solid red'
+    } else {
+      console.log('Something wrong, not bool value')
+    }
+  });
+
+  p.classList.add('message');
+  
+  if(boolArr.indexOf(false) > -1) {
+    p.textContent = invalidFieldMsg;
+    p.style.border = '1px solid red';
+    p.style.color = 'red';
+    
+  } else {
+    p.textContent = successMsg;
+    p.style.border = '1px solid green';
+    p.style.color = 'green';
+
+    // Succesful validation and end of styles 
+    const allFields = document.querySelectorAll('.inputField');
+      allFields.forEach(el => {
+    console.log(el.value = '');
+    setTimeout(() => {
+      el.style.border = 'none';
+      elementArr[2].style.border = '2px solid #222';
+    }, 3500);
+  });
+  }
+
+  const form = document.querySelector('#contact-form');
+  if(!document.querySelector('#contact-form .message')) {
+    form.insertAdjacentElement('beforeend', p);
+
+    setTimeout(() => {
+      const el = document.querySelector('.message');
+      el.parentElement.removeChild(el);
+    }, 3500);
+  }
+}
+
+if(document.querySelector('button[value="Wyślij"]')) {
+  document.querySelector('button[value="Wyślij"]').addEventListener('click', validateForm);
+}
+/**FORM VALIDATION */
+

@@ -66,6 +66,7 @@
     width: 100%;
     background-color: $gray-light;
     margin-bottom: $sp-2;
+    padding: $sp-1;
   }
 
   .btn {
@@ -77,6 +78,10 @@
     }
   }
 
+}
+.message {
+  margin: $sp-2;
+  display: inline-block;
 }
 
 

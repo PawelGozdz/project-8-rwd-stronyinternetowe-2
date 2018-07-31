@@ -2,14 +2,14 @@
   <html lang="pl">
     <head>
       <!-- Global site tag (gtag.js) - Google Analytics -->
-      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118640645-1"></script>
+      <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118640645-1"></script>
       <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
 
         gtag('config', 'UA-118640645-1');
-      </script>
+      </script> -->
       <meta charset="UTF-8" />
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -144,22 +144,24 @@
                 
                 <p class="contact__text">Telefon: <a href="callto:+48510502081">+48 510 502 081</a></p>
                 <p class="contact__text">Email: kontakt@rwd-stronyinternetowe.pl</p>
+                <p class="contact__text">Godziny otwarcia:</p>
+                <p class="contact__text">Pon - Nd <time>08:00</time> - <time>22:00</time></p>
               </address>
             </article>
 
             <article class="contact__box">
               <h3 class="article-heading">Formularz</h3>
-              <form action="" method="POST">
+              <form method="POST" id="contact-form" novalidate>
                 <div class="form-group">
                   <label for="name">Imię:</label>
-                  <input type="text" name="name" id="name" required>
+                  <input type="text" name="name" id="name" class="inputField" required>
                 </div>   
                 <div class="form-group">
                   <label for="email">E-mail:</label>
-                  <input type="text" name="email" id="email" required>
+                  <input type="text" name="email" id="email" class="inputField" required>
                 </div>   
-                <textarea rows="3" cols="40" placeholder="Wpisz wiadomość..." required></textarea>
-                <button type="submit" class="btn">Wyślij</button>
+                <textarea rows="4" cols="40" placeholder="Wpisz wiadomość..." class="inputField" required></textarea>
+                <button value="Wyślij" class="btn">Wyślij</button>
               </form>
             </article>
           </div>
