@@ -151,7 +151,7 @@
 
             <article class="contact__box">
               <h3 class="article-heading">Formularz</h3>
-              <form method="POST" id="contact-form" novalidate>
+              <form method="POST" id="contact-form" name="contact-form" action='./assets/php/send.php' novalidate>
                 <div class="form-group">
                   <label for="name">Imię:</label>
                   <input type="text" name="name" id="name" class="inputField" required>
@@ -160,8 +160,8 @@
                   <label for="email">E-mail:</label>
                   <input type="text" name="email" id="email" class="inputField" required>
                 </div>   
-                <textarea rows="4" cols="40" placeholder="Wpisz wiadomość..." class="inputField" required></textarea>
-                <button value="Wyślij" class="btn">Wyślij</button>
+                <textarea rows="4" cols="40" placeholder="Wpisz wiadomość..." name="message" id="message" class="inputField" required></textarea>
+                <input type="submit" value="Wyślij" class="btn">
               </form>
             </article>
           </div>

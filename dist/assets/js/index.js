@@ -228,10 +228,6 @@ const init = () => {
     el.addEventListener('click', appInit);
   });
 
-  // Run app aby clicking opton button
-  // Array.from(document.querySelectorAll('.services__option')).forEach(el => {
-  //   el.addEventListener('click', appInit);
-  // });
 };
 
 init();
@@ -244,6 +240,7 @@ init();
 function validateForm(e) {
   e.preventDefault();
 
+  const submitBtn = document.querySelector('#contact-form input[type="submit"]');
   const name = document.querySelector('#contact-form input[name="name"]');
   const email = document.querySelector('#contact-form input[name="email"]');
   const textarea = document.querySelector('#contact-form textarea');
@@ -278,7 +275,50 @@ function validateForm(e) {
     elements.push(textarea);
     check.push(false);
   }
-  validationMessage(check, elements);
+
+  const results = validationMessage(check, elements);
+
+  // console.log(elements);
+  if(results !== 'undefined') {
+    const data = JSON.stringify(
+      {
+        name : results[0].value,
+        email: results[1].value,
+        message: results[2].value
+      }
+    );
+
+    
+    results.forEach(el => el.value = '');
+ 
+
+    // if(!ajax) {
+      const ajax = new XMLHttpRequest();
+      console.log(ajax);
+      // ajax.open('POST', 'assets/php/send.php', true);
+      // ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+      // ajax.send(data);
+
+
+      ajax.open('POST', "assets/php/send.php", true);
+      ajax.onreadystatechange = function() {
+        if(this.status == 200 || this.readyState == 4) {
+          console.log('Kod 4 lub 200');
+          console.dir(this.responseText);
+          if(this.responseText.toString() === "Success") {
+            console.log('Odbieram');
+              document.querySelector('form').innerHTML = `Dziękuję za wiadomość.`;
+            } else {
+              console.log('Coś nie tak z responseText od PHP');
+            }
+        } else {
+          console.log('Cos nie tak z kodem 200 lub 4');
+        }
+      };
+      ajax.send(data);
+    // }
+  };
+
 }
 
 function validationMessage(boolArr, elementArr) {
@@ -298,27 +338,6 @@ function validationMessage(boolArr, elementArr) {
   });
 
   p.classList.add('message');
-  
-  if(boolArr.indexOf(false) > -1) {
-    p.textContent = invalidFieldMsg;
-    p.style.border = '1px solid red';
-    p.style.color = 'red';
-    
-  } else {
-    p.textContent = successMsg;
-    p.style.border = '1px solid green';
-    p.style.color = 'green';
-
-    // Succesful validation and end of styles 
-    const allFields = document.querySelectorAll('.inputField');
-      allFields.forEach(el => {
-    console.log(el.value = '');
-    setTimeout(() => {
-      el.style.border = 'none';
-      elementArr[2].style.border = '2px solid #222';
-    }, 3500);
-  });
-  }
 
   const form = document.querySelector('#contact-form');
   if(!document.querySelector('#contact-form .message')) {
@@ -328,11 +347,37 @@ function validationMessage(boolArr, elementArr) {
       const el = document.querySelector('.message');
       el.parentElement.removeChild(el);
     }, 3500);
+    
+  }
+  
+  if(boolArr.indexOf(false) > -1) {
+    p.textContent = invalidFieldMsg;
+    p.style.border = '1px solid red';
+    p.style.color = 'red';
+
+    
+  } else {
+    p.textContent = successMsg;
+    p.style.border = '1px solid green';
+    p.style.color = 'green';
+
+    // Succesful validation and end of styles 
+    const allFields = document.querySelectorAll('.inputField');
+    allFields.forEach(el => {
+      // el.value = '';
+      setTimeout(() => {
+        el.style.border = 'none';
+        elementArr[2].style.border = '2px solid #222';
+      }, 3500);
+    });
+
+    return elementArr;
   }
 }
 
-if(document.querySelector('button[value="Wyślij"]')) {
-  document.querySelector('button[value="Wyślij"]').addEventListener('click', validateForm);
+if(document.querySelector('#contact-form')) {
+  document.querySelector('#contact-form').addEventListener('submit', validateForm);
+  
 }
 /**FORM VALIDATION */
 
