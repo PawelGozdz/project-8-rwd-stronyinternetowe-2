@@ -151,7 +151,7 @@
 
             <article class="contact__box">
               <h3 class="article-heading">Formularz</h3>
-              <form method="POST" id="contact-form" name="contact-form" action='./assets/php/send.php' novalidate>
+              <form method="POST" id="contact-form" name="contact-form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?" novalidate>
                 <div class="form-group">
                   <label for="name">Imię:</label>
                   <input type="text" name="name" id="name" class="inputField" required>
@@ -160,7 +160,7 @@
                   <label for="email">E-mail:</label>
                   <input type="text" name="email" id="email" class="inputField" required>
                 </div>   
-                <textarea rows="4" cols="40" placeholder="Wpisz wiadomość..." name="message" id="message" class="inputField" required></textarea>
+                <textarea rows="4" cols="40" placeholder="Wpisz wiadomość..." name="text-message" id="message" class="inputField" required></textarea>
                 <input type="submit" value="Wyślij" class="btn">
               </form>
             </article>
@@ -168,7 +168,7 @@
         </div>
 
         <div class="mapa">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1341818.16878734!2d19.66013661670752!3d51.02301337458055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471815c5b716c371%3A0xc6a04aa1b70aead6!2sNowa%2C+27-200+Starachowice!5e0!3m2!1spl!2spl!4v1532541170481"  allowfullscreen></iframe>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1341818.16878734!2d19.66013661670752!3d51.02301337458055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471815c5b716c371%3A0xc6a04aa1b70aead6!2sNowa%2C+27-200+Starachowice!5e0!3m2!1spl!2spl!4v1532541170481"  allowfullscreen></iframe>
         </div>
       
 

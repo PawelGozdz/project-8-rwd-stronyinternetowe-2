@@ -1,6 +1,9 @@
 /*
- 
+ *
 */
+
+document.querySelector('.navbar ul li:last-child').style.display = 'none';
+
 // Main cotrol object
 const state = {};
 
@@ -284,40 +287,36 @@ function validateForm(e) {
       {
         name : results[0].value,
         email: results[1].value,
-        message: results[2].value
+        text: results[2].value
       }
     );
 
     
-    results.forEach(el => el.value = '');
+    // results.forEach(el => el.value = '');
  
-
-    // if(!ajax) {
-      const ajax = new XMLHttpRequest();
-      console.log(ajax);
-      // ajax.open('POST', 'assets/php/send.php', true);
-      // ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
-      // ajax.send(data);
-
-
-      ajax.open('POST', "assets/php/send.php", true);
-      ajax.onreadystatechange = function() {
+    
+    // if(!xhr) {
+      const xhr = new XMLHttpRequest();
+      xhr.open('POST', 'assets/php/send.php', true);
+      xhr.setRequestHeader("Content-Type", "application/json");
+    
+      xhr.onreadystatechange = function(err) {
         if(this.status == 200 || this.readyState == 4) {
-          console.log('Kod 4 lub 200');
-          console.dir(this.responseText);
-          if(this.responseText.toString() === "Success") {
-            console.log('Odbieram');
+          if(this.responseText.includes('Success')) {
+              console.log('Odbieram');
               document.querySelector('form').innerHTML = `Dziękuję za wiadomość.`;
             } else {
-              console.log('Coś nie tak z responseText od PHP');
+              // console.log('Coś nie tak z responseText od PHP');
             }
         } else {
           console.log('Cos nie tak z kodem 200 lub 4');
         }
       };
-      ajax.send(data);
+      xhr.send(data);
     // }
-  };
+  } else {
+    console.log('Coś nie tak z obiektem data, w którym zapisane są dane z inputu')
+  }
 
 }
 
@@ -343,10 +342,12 @@ function validationMessage(boolArr, elementArr) {
   if(!document.querySelector('#contact-form .message')) {
     form.insertAdjacentElement('beforeend', p);
 
-    setTimeout(() => {
-      const el = document.querySelector('.message');
-      el.parentElement.removeChild(el);
-    }, 3500);
+    // Ta funkcja jest zablokowana, gdy php przesyla wiadomosc po wyslaniu formy. W przeciwnym wypadku, JS wywala error, bo ponizszy setTimeout nie moze znalezc .parentElement, gdyz skrypt php nadpisuje cala zawartosc form
+
+    // setTimeout(() => {
+    //   const el = document.querySelector('.message');
+    //   el.parentElement.removeChild(el);
+    // }, 3500);
     
   }
   
@@ -381,3 +382,53 @@ if(document.querySelector('#contact-form')) {
 }
 /**FORM VALIDATION */
 
+/**ANIMATIONS AND FADE-IN'S */
+const sliderElements = document.querySelectorAll('.slide-in');
+
+function debounce(func, wait = 20, immediate = true) {
+  var timeout;
+  return function() {
+    var context = this, args = arguments;
+    var later = function() {
+      timeout = null;
+      if (!immediate) func.apply(context, args);
+    };
+    var callNow = immediate && !timeout;
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+    if (callNow) func.apply(context, args);
+  };
+};
+
+function checkSlide(e) {
+  if(sliderElements) {
+    sliderElements.forEach(slideElement => {
+      const relVal = (window.scrollY - slideElement.offsetTop) + window.innerHeight;
+      console.log(relVal);
+      if(
+          (window.scrollY + window.innerHeight) > slideElement.offsetTop &&
+          (relVal > 0 && relVal < slideElement.offsetTop)
+        ) {
+        slideElement.classList.add('active');
+      } else {
+        slideElement.classList.remove('active')
+      }
+    });
+  }
+};
+
+function pageLoad() {
+  setTimeout(function() {
+    if(
+      (window.scrollY + window.innerHeight) > slideElement.offsetTop &&
+      (relVal > 0 && relVal < slideElement.offsetTop)
+    ) {
+      slideElement.classList.add('active');
+    } else {
+      slideElement.classList.remove('active')
+    }
+  });
+}
+
+window.addEventListener('scroll', checkSlide);
+// window.addEventListener('DOMContentLoaded', pageLoad);

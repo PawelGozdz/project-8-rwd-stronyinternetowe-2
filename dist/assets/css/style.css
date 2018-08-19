@@ -311,6 +311,21 @@ $breakpoint argument choices:
 - tab-land
 - big-desktop
 */
+/*SLIDE IN*/
+.slide-in {
+  opacity: 0;
+  transition: all .5s; }
+
+.onScroll-left.slide-in {
+  transform: translateX(-30%) scale(0.95); }
+
+.onScroll-right.slide-in {
+  transform: translateX(30%) scale(0.95); }
+
+.slide-in.active {
+  opacity: 1;
+  transform: translateX(0%) scale(1); }
+
 .w-container, .nav__container, .info__container, .display__container, .services__list, .services__bar, .faq__container, .articles__container, .about__container, .contact__container, .footer__container {
   max-width: 1200px;
   margin: 0 auto;
