@@ -56,7 +56,7 @@
 
     @include respond(tab-port) {
       //margin: $sp-2;
-      height: 21rem;
+      height: 22rem;
     }
   }
 
@@ -91,8 +91,6 @@
 
   &__categories {
     display: inline;
-    //height: auto;
-    //width: auto;
   }
 
 
@@ -129,8 +127,7 @@
   }
 
   &__li {
-    //float: left;
-    margin: $sp-1 $sp-2 $sp-1 0;
+    margin: $sp-1 $sp-1 $sp-1 0;
     display: inline-block;
 
     &::before {

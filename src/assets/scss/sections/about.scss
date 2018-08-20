@@ -1,8 +1,16 @@
 .about {
 
+  &__info {
+    background-image: linear-gradient(135deg, rgba($color1, .1), rgba($color5, .1), rgba($color4, .1));
+    padding: $sp-2;
+    box-shadow: 0 2px 13px $gray-mid;
+
+  }
 
   &__container {
     @extend .w-container;
+    
+    margin-top: $sp-2;
   }
 
   &__text {
