@@ -43,12 +43,6 @@ $container: 1200px;
 (1200 - 1800) is where our normal styles apply
 1800px + :    Big desktop
 
-*/
-
-//ORDER: Base + typography > general layout + grid > page layout > components
-
-
-/*
 $breakpoint argument choices:
 - phone
 - tab-port
@@ -78,26 +72,3 @@ $breakpoint argument choices:
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
-/*SLIDE IN*/
-
-// .slide-in {
-//   opacity:0;
-//   transition:all .5s;
-// }
-// .onScroll-left.slide-in {
-//   transform:translateX(-30%) scale(0.95);
-// }
-// .onScroll-right.slide-in {
-//   transform:translateX(30%) scale(0.95);
-// }
-
-// .slide-in.active {
-//   opacity:1;
-//   transform:translateX(0%) scale(1);
-// }
-
-// .slide-in.active {
-//   color: red;
-// }
-

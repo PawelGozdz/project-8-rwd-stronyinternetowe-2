@@ -30,9 +30,7 @@
     margin: $sp-1 auto;  
     float: left;
     padding: $sp-1;
-
-
-        
+  
     @include respond(tab-port) {
       display: none;
       width: 49.5%;
@@ -55,7 +53,6 @@
     box-shadow: 0 2px 6px 1px $gray-mid;
 
     @include respond(tab-port) {
-      //margin: $sp-2;
       height: 22rem;
     }
   }
@@ -85,8 +82,6 @@
 
   &__subheading {
     display: inline-block;
-    //text-align: left;
-
   }
 
   &__categories {
@@ -122,8 +117,6 @@
 
   &__ul {
     list-style-type: disc;
-    //padding-left: 1rem;
-
   }
 
   &__li {

@@ -4,7 +4,6 @@
     background-image: linear-gradient(135deg, rgba($color1, .1), rgba($color5, .1), rgba($color4, .1));
     padding: $sp-2;
     box-shadow: 0 2px 13px $gray-mid;
-
   }
 
   &__container {
@@ -23,10 +22,5 @@
     margin: $sp-2;
     margin-left: 0;
     display: inline-block;
-
-    @include respond(tab-port) {
-
-    }
   }
-  
 }

@@ -32,7 +32,6 @@
     padding: $sp-1;
   }
 
-
   .form-group {
     width: 100%;
     padding: 0 $sp-1;
@@ -77,14 +76,11 @@
       max-width: 35%;
     }
   }
-
 }
 .message {
   margin: $sp-2;
   display: inline-block;
 }
-
-
 
 .mapa {
   @extend .w-full;

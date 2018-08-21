@@ -49,7 +49,6 @@
       -moz-transform: translateY(2px) scale(1.05);
       transform: translateY(2px) scale(1.05);
     }
-
   } 
   
   &__link {
@@ -88,7 +87,6 @@
     border: 2px solid $gray-dark;
     border-radius: 20px;
     margin: 0 2% $sp-1;
-    //display: none;
 
     @include respond(tab-port) {
       margin: 0 auto $sp-3;
@@ -106,8 +104,6 @@
     display: inline-block;
     margin: $sp-1;
     padding: $sp-1 $sp-2;
-    //cursor: pointer;
-    //box-shadow: 0 2px 4px $gray-dark;
     
     &--nowa {
       background-color: $color1;
@@ -124,15 +120,6 @@
     &--wspolpraca {
       background-color: $color4;
     }
-
-    // &:hover {
-    //   box-shadow: 0 2px 8px $gray-dark;
-    // }
-
-    // &:active,
-    // &:focus {
-    //   transform: translateY(2px);
-    // }
   }
 
   &__text {

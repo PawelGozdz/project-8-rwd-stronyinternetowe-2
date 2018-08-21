@@ -28,7 +28,7 @@
   // HERO - contact
   &--contact {
     height: 50vh;
-    background-image: linear-gradient( rgba($white, .75), rgba($white, .9)), url('../img/kontakt-telefony-small.jpg');
+    background-image: linear-gradient( rgba($white, .75), rgba($white, .9)), url('../img/contact-telefony-small.jpg');
 
     @include respond(tab-land) {
       background-image: linear-gradient( rgba($white, .75), rgba($white, .9)), url('../img/kontakt-telefony-big.jpg');
@@ -44,5 +44,4 @@
       background-image: linear-gradient( rgba($white, .75), rgba($white, .9)), url('../img/hexagon-big.jpg');
     }
   }
-
 }

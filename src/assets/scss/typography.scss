@@ -1,7 +1,6 @@
 html {
   //font-size: 62.5%; // 1rem = 10px; 10px/16px = 62.5%s
   font-family: 'Open Sans Condensed', sans-serif;
-  // line-height: 1.5rem;
   
   @include respond(phone) {
     font-size: 92%;
@@ -22,10 +21,6 @@ a, html:link,
 html:visited {
   color: $gray-dark;
 }
-a {
-  //text-decoration: none;
-}
-
 
 // HEADERS
 
