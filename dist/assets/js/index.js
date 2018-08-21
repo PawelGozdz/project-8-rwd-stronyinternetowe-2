@@ -290,30 +290,26 @@ function validateForm(e) {
         text: results[2].value
       }
     );
-
     
     // results.forEach(el => el.value = '');
  
-    
-    // if(!xhr) {
-      const xhr = new XMLHttpRequest();
-      xhr.open('POST', 'assets/php/send.php', true);
-      xhr.setRequestHeader("Content-Type", "application/json");
-    
-      xhr.onreadystatechange = function(err) {
-        if(this.status == 200 || this.readyState == 4) {
-          if(this.responseText.includes('Success')) {
-              console.log('Odbieram');
-              document.querySelector('form').innerHTML = `Dziękuję za wiadomość.`;
-            } else {
-              // console.log('Coś nie tak z responseText od PHP');
-            }
-        } else {
-          console.log('Cos nie tak z kodem 200 lub 4');
-        }
-      };
-      xhr.send(data);
-    // }
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', 'assets/php/send.php', true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+  
+    xhr.onreadystatechange = function(err) {
+      if(this.status == 200 || this.readyState == 4) {
+        if(this.responseText.includes('Success')) {
+            console.log('Odbieram');
+            document.querySelector('form').innerHTML = `Dziękuję za wiadomość.`;
+          } else {
+            // console.log('Coś nie tak z responseText od PHP');
+          }
+      } else {
+        console.log('Cos nie tak z kodem 200 lub 4');
+      }
+    };
+    xhr.send(data);
   } else {
     console.log('Coś nie tak z obiektem data, w którym zapisane są dane z inputu')
   }
@@ -381,57 +377,6 @@ if(document.querySelector('#contact-form')) {
   
 }
 /**FORM VALIDATION */
-
-/**ANIMATIONS AND FADE-IN'S */
-// const sliderElements = document.querySelectorAll('.slide-in');
-
-// function debounce(func, wait = 20, immediate = true) {
-//   var timeout;
-//   return function() {
-//     var context = this, args = arguments;
-//     var later = function() {
-//       timeout = null;
-//       if (!immediate) func.apply(context, args);
-//     };
-//     var callNow = immediate && !timeout;
-//     clearTimeout(timeout);
-//     timeout = setTimeout(later, wait);
-//     if (callNow) func.apply(context, args);
-//   };
-// };
-
-// function checkSlide(e) {
-//   if(sliderElements) {
-//     sliderElements.forEach(slideElement => {
-//       const relVal = (window.scrollY - slideElement.offsetTop) + window.innerHeight;
-//       console.log(relVal);
-//       if(
-//           (window.scrollY + window.innerHeight) > slideElement.offsetTop &&
-//           (relVal > 0 && relVal < slideElement.offsetTop)
-//         ) {
-//         slideElement.classList.add('active');
-//       } else {
-//         slideElement.classList.remove('active')
-//       }
-//     });
-//   }
-// };
-
-// function pageLoad() {
-//   setTimeout(function() {
-//     if(
-//       (window.scrollY + window.innerHeight) > slideElement.offsetTop &&
-//       (relVal > 0 && relVal < slideElement.offsetTop)
-//     ) {
-//       slideElement.classList.add('active');
-//     } else {
-//       slideElement.classList.remove('active')
-//     }
-//   });
-// }
-
-// window.addEventListener('scroll', checkSlide);
-// // window.addEventListener('DOMContentLoaded', pageLoad);
 
 // Smooth scroll 
 let element = document.querySelector('.info');
