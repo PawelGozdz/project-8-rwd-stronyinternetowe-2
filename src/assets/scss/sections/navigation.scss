@@ -90,7 +90,7 @@
     background: transparent;
     display: inline-block;
     text-align: center;
-    border: 3px solid $gray-mid;
+    border: 3px solid $gray-dark;
     border-radius: 4px;
     cursor: pointer;
 
@@ -108,7 +108,7 @@
     &::after {
       width: 24px;
       height: 2px;
-      background-color: $gray-mid;
+      background-color: $gray-dark;
       display: inline-block;
     }
 

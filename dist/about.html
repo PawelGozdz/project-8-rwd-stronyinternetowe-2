@@ -80,6 +80,7 @@
         }
       }
     </script>
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
 
   </head>
 <body>
@@ -122,7 +123,7 @@
     <!-- ******************************** -->
     <!-- HERO -->
     <section class="hero hero--about">
-      <div class="hero__container">
+      <div class="hero__container load-hidden">
         <h1>O mnie</h1>
         <h3 class="article-heading">Dla Ciebie</h3>
 
@@ -188,5 +189,14 @@
   </div>
   
   <script src="./assets/js/index.js"></script>
+  <script>
+    ScrollReveal().reveal('.load-hidden > *', {
+      delay: 1000, 
+      interval: 400, 
+      origin: 'right',
+      distance: '100px',
+    });
+    
+  </script>
 </body>
 </html>

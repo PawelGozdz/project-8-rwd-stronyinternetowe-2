@@ -80,6 +80,7 @@
         }
       }
     </script>
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
 
   </head>
 <body>
@@ -126,7 +127,7 @@
     <!-- ******************************** -->
     <!-- FAQ -->
     <section class="faq">
-      <h1 class="section-heading">FAQ - Najczęściej Zadawane Pytnania</h1>
+      <h1 class="section-heading  load-hidden">FAQ - Najczęściej Zadawane Pytnania</h1>
       
       <!-- ******************************** -->
       <!--faq START -->
@@ -230,5 +231,13 @@
   </div>
   
   <script src="./assets/js/index.js"></script>
+  <script>
+    ScrollReveal().reveal('.load-hidden', {
+      delay: 1000, 
+      interval: 400, 
+      origin: 'right',
+      distance: '100px',
+    });       
+  </script>
 </body>
 </html>

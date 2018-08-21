@@ -79,6 +79,7 @@
         }
       }
     </script>
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
 
   </head>
 <body>
@@ -127,7 +128,7 @@
       <div class="services">
        
         <nav class="services__nav">
-          <ul class="services__list">
+          <ul class="services__list load-hidden">
             <li class="services__item services__item--nowa">
               <a href="#" class="services__link">
                 <img src="./assets/img/design-strony-www.svg" alt="Nowa strona internetowa" class="services__icon" title="Nowa strona WWW">
@@ -194,7 +195,9 @@
       <!-- ******************************** -->
       <!-- SECTION FAQ -->
       <div class="faq__info">
-        <h2 class="faq__header"><a href="faq.html">Masz jakieś pytania? Kliknij i przejdź do sekcji FAQ</a></h2>
+        <h2 class="faq__header">
+          <a href="faq.html">Masz jakieś pytania? Kliknij i przejdź do sekcji FAQ</a>
+        </h2>
       </div>
       <!-- SECTION FAQ -->
       
@@ -375,5 +378,13 @@
   </div>
   
   <script src="./assets/js/index.js"></script>
+  <script>
+    ScrollReveal().reveal('.load-hidden > *', {
+      delay: 700, 
+      interval: 200, 
+      origin: 'right',
+      distance: '100px',
+    });       
+  </script>
 </body>
 </html>

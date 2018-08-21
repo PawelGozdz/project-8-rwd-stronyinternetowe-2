@@ -79,6 +79,8 @@
         }
       }
     </script>
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+
 
   </head>
 <body>
@@ -121,7 +123,7 @@
     <!-- ******************************** -->
     <!-- HERO -->
     <section class="hero hero--index">
-      <div class="hero__container">
+      <div class="hero__container load-hidden">
         <h1>Tworzenie Stron Internetowych</h1>
         <h3 class="article-heading">Dla Ciebie i Twojego Biznesu</h3>
         <a href="#info" class="go-to go-to__services btn btn--purple">Czytaj więcej</a>
@@ -135,13 +137,13 @@
 
     <!-- ******************************** -->
     <!-- INFO -->
-      <section class="info">
+      <section class="info" id="info">
         <div class="info__container">
           <h2 class="section-heading onScroll-left slide-in">Usługi</h2>
 
           <div class="info__box">
   
-            <div class="info__hexagon  onScroll-left slide-in">
+            <div class="info__hexagon  load-hidden">
               <ul id="grid" class="clear">
                 <li>
                   <div class="hexagon hexagon--1">
@@ -185,7 +187,7 @@
               </ul>
             </div>
   
-            <div class="info__services">
+            <div class="info__services load-hidden">
               <article class="info__article  onScroll-right slide-in">
                 <img src="./assets/img/design-strony-www.svg" class="info__icon" alt="Proces tworzenia strony www" title="Nowa strona internetowa">
                 <h3 class="article-heading">Nowa</h3>
@@ -214,7 +216,7 @@
     <!-- ******************************** -->
     <!-- DISPLAY -->
     <section class="display">
-      <div class="display__container onScroll-left slide-in">
+      <div class="display__container load-hidden">
         <div class="display__button ">
           <span class="display__text">sprawdź </span>
           <a href="services.html" class="btn btn--read">Ofertę</a>
@@ -248,5 +250,17 @@
   </div>
   
   <script src="./assets/js/index.js"></script>
+  <script>
+    ScrollReveal().reveal('.load-hidden > *', {
+      delay: 1000, 
+      interval: 400, 
+      origin: 'right',
+      distance: '100px',
+    });
+    ScrollReveal().reveal('.info__hexagon', {delay: 400});
+    ScrollReveal().reveal('.info__services > *', {delay: 600, interval: 200});
+    ScrollReveal().reveal('.display__button', {delay: 600});
+    
+  </script>
 </body>
 </html>

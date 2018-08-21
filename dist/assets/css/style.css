@@ -312,20 +312,6 @@ $breakpoint argument choices:
 - big-desktop
 */
 /*SLIDE IN*/
-.slide-in {
-  opacity: 0;
-  transition: all .5s; }
-
-.onScroll-left.slide-in {
-  transform: translateX(-30%) scale(0.95); }
-
-.onScroll-right.slide-in {
-  transform: translateX(30%) scale(0.95); }
-
-.slide-in.active {
-  opacity: 1;
-  transform: translateX(0%) scale(1); }
-
 .w-container, .nav__container, .info__container, .display__container, .services__list, .services__bar, .faq__container, .articles__container, .about__container, .contact__container, .footer__container {
   max-width: 1200px;
   margin: 0 auto;
@@ -503,6 +489,9 @@ ol, ul {
     content: '---';
     margin: 0.4rem 1rem; }
 
+html.sr .load-hidden {
+  visibility: hidden; }
+
 .nav {
   background: #fff;
   border-bottom: 2px solid #f0f0f0; }
@@ -569,7 +558,7 @@ ol, ul {
     background: transparent;
     display: inline-block;
     text-align: center;
-    border: 3px solid #c2c2c2;
+    border: 3px solid #222222;
     border-radius: 4px;
     cursor: pointer; }
     @media (min-width: 37.5em) {
@@ -581,7 +570,7 @@ ol, ul {
     .nav__icon, .nav__icon::before, .nav__icon::after {
       width: 24px;
       height: 2px;
-      background-color: #c2c2c2;
+      background-color: #222222;
       display: inline-block; }
     .nav__icon::before, .nav__icon::after {
       content: '';
@@ -629,10 +618,10 @@ ol, ul {
     background-image: linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.9)), url("../img/kontakt-telefony-small.jpg"); }
     @media (min-width: 56.25em) {
       .hero--contact {
-        background-image: linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.9)), url("../img/kontakt-telefony-small.jpg"); } }
+        background-image: linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.9)), url("../img/kontakt-telefony-big.jpg"); } }
   .hero--about {
     height: 50vh;
-    background-image: linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.9)), url("../img/hexagon-big.jpg"); }
+    background-image: linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.9)), url("../img/hexagon-small.jpg"); }
     @media (min-width: 56.25em) {
       .hero--about {
         background-image: linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.9)), url("../img/hexagon-big.jpg"); } }
@@ -641,14 +630,16 @@ ol, ul {
   width: 100%;
   display: flex;
   flex-direction: column;
-  margin-bottom: 3.6rem; }
+  margin-bottom: 3.6rem;
+  overflow: hidden; }
   @media (min-width: 75em) {
     .info__box {
       flex-direction: row; } }
 
 .info__services {
   display: flex;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  overflow: hidden; }
   @media (min-width: 75em) {
     .info__services {
       width: 60%; } }
