@@ -624,12 +624,18 @@ ol, ul {
     @media (min-width: 56.25em) {
       .hero--index {
         background-image: linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), url("../img/hero-3-big.jpg"); } }
-  .hero--developer {
+  .hero--contact {
     height: 50vh;
-    background-image: linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), url("../img/hero-4-small.jpg"); }
+    background-image: linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.9)), url("../img/kontakt-telefony-small.jpg"); }
     @media (min-width: 56.25em) {
-      .hero--developer {
-        background-image: linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), url("../img/hero-4-big.jpg"); } }
+      .hero--contact {
+        background-image: linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.9)), url("../img/kontakt-telefony-small.jpg"); } }
+  .hero--about {
+    height: 50vh;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.9)), url("../img/hexagon-big.jpg"); }
+    @media (min-width: 56.25em) {
+      .hero--about {
+        background-image: linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.9)), url("../img/hexagon-big.jpg"); } }
 
 .info__box {
   width: 100%;
@@ -783,6 +789,16 @@ ol, ul {
     background-color: #fff;
     display: inline-block;
     border-radius: 4px; }
+    .services__item--nowa {
+      background-image: linear-gradient(75deg, rgba(157, 106, 163, 0.65), rgba(157, 106, 163, 0.8)); }
+    .services__item--optymalizacja {
+      background-image: linear-gradient(75deg, rgba(75, 214, 133, 0.65), rgba(75, 214, 133, 0.8)); }
+    .services__item--pozycjonowanie {
+      background-image: linear-gradient(75deg, rgba(89, 148, 240, 0.65), rgba(89, 148, 240, 0.8)); }
+    .services__item--wspolpraca {
+      background-image: linear-gradient(75deg, rgba(255, 129, 100, 0.65), rgba(255, 129, 100, 0.8)); }
+    .services__item--wszystko {
+      background-image: linear-gradient(75deg, rgba(226, 221, 248, 0.65), rgba(226, 221, 248, 0.8)); }
     .services__item:hover {
       transform: scale(1.05);
       box-shadow: 0 3px 12px #222222; }

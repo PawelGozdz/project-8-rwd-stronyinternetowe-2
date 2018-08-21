@@ -17,6 +17,26 @@
     display: inline-block;
     border-radius: 4px;
 
+    &--nowa {
+      background-image: linear-gradient(75deg, rgba($color1, .65), rgba($color1, .8));
+    }
+    
+    &--optymalizacja {
+      background-image: linear-gradient(75deg, rgba($color5, .65), rgba($color5, .8));
+    }
+    
+    &--pozycjonowanie {
+      background-image: linear-gradient(75deg, rgba($color3, .65), rgba($color3, .8));
+    }
+    
+    &--wspolpraca {
+      background-image: linear-gradient(75deg, rgba($color4, .65), rgba($color4, .8));
+    }
+
+    &--wszystko {
+      background-image: linear-gradient(75deg, rgba($color2, .65), rgba($color2, .8));
+    }
+
     &:hover {
       transform: scale(1.05);
       box-shadow: 0 3px 12px $gray-dark;

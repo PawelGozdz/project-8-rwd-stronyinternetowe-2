@@ -25,13 +25,23 @@
     }
   }
 
-  // HERO - developer and contact
-  &--developer {
+  // HERO - contact
+  &--contact {
     height: 50vh;
-    background-image: linear-gradient( rgba($white, .75), rgba($white, .75)), url('../img/hero-4-small.jpg');
+    background-image: linear-gradient( rgba($white, .75), rgba($white, .9)), url('../img/kontakt-telefony-small.jpg');
 
     @include respond(tab-land) {
-      background-image: linear-gradient( rgba($white, .75), rgba($white, .75)), url('../img/hero-4-big.jpg');
+      background-image: linear-gradient( rgba($white, .75), rgba($white, .9)), url('../img/kontakt-telefony-small.jpg');
+    }
+  }
+
+  // HERO - about
+  &--about {
+    height: 50vh;
+    background-image: linear-gradient( rgba($white, .75), rgba($white, .9)), url('../img/hexagon-big.jpg');
+
+    @include respond(tab-land) {
+      background-image: linear-gradient( rgba($white, .75), rgba($white, .9)), url('../img/hexagon-big.jpg');
     }
   }
 
