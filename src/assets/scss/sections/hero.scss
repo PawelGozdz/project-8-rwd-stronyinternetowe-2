@@ -9,15 +9,21 @@
     text-align: center;
 
     @include absCenter;
+    transform: translate(-50%, -60%);
+    
+    @include respond(tab-port) {
+      @include absCenter;
+
+    }
   }
 
   .btn--purple {
-    margin-top: $sp-2;
+    margin-top: $sp-1;
   }
 
   // HERO - index.html
   &--index {
-    height: 90vh;
+    height: 75vh;
     background-image: linear-gradient( rgba($white, .75), rgba($white, .75)), url('../img/hero-3-small.jpg');
     
     @include respond(tab-land) {

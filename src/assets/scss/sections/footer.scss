@@ -10,11 +10,20 @@
     margin: $sp-2;
   }
 
-  &__text {
+  &__list {
     text-align: center;
+    
+    &:not(:last-of-type) {
+      margin-top: $sp-2;
+
+    }
   }
 
-  &__cities {
-    margin-top: $sp-2;
+  &__item {
+    display: inline-block;
+
+    &:not(:last-of-type)::after {
+      content: '|';
+    } 
   }
 }
