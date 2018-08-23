@@ -1,6 +1,8 @@
 RewriteEngine On
 RewriteCond %{HTTP_HOST} ^www.rwd-stronyinternetowe.pl
 RewriteRule (.*) http://rwd-stronyinternetowe.pl/$1 [R=301,L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
 ## EXPIRES CACHING ##
 <IfModule mod_expires.c>
 ExpiresActive on
@@ -27,3 +29,6 @@ ExpiresByType application/rss+xml "access plus 1 hour"
 ExpiresByType application/atom+xml "access plus 1 hour"
 </IfModule>
 ## EXPIRES CACHING ##
+
+RewriteEngine On
+

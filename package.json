@@ -6,7 +6,6 @@
   "scripts": {
     "watch:sass": "node-sass src/assets/scss/main.scss dist/assets/css/style.css -w",
     "devserver": "live-server",
-    "babel:compile": "babel src -d dist",
     "babel:compile": "babel --presets env src -d dist",
     "start": "npm-run-all --parallel devserver watch:sass",
     "compile:sass": "node-sass src/assets/scss/main.scss dist/assets/css/style.comp.css",
@@ -33,7 +32,8 @@
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
-    "jquery": "^3.3.1"
+    "jquery": "^3.3.1",
+    "scrollreveal": "^4.0.0"
   },
   "bugs": {
     "url": "https://github.com/PawelGozdz/project-8-rwd-stronyinternetowe-2/issues"

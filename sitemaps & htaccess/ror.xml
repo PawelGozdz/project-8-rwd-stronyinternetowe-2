@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:ror="http://rorweb.com/0.1/" >
+<channel>
+  <title>ROR Sitemap for http://rwd-stronyinternetowe.pl/</title>
+  <link>http://rwd-stronyinternetowe.pl/</link>
+
+<item>
+     <link>http://rwd-stronyinternetowe.pl/</link>
+     <title>Tworzenie stron WWW - Starachowice - Świętokrzyskie</title>
+     <description>Tworzenie interaktywnych i responsywnych stron WWW dopasowanych do wszystkich urządzeń. Starachowice, Skarżysko Kamienna, Ostrowiec Świętokrzyski</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>0</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>http://rwd-stronyinternetowe.pl/services</link>
+     <title>Usługi - Nowa strona WWW, optymalizacja, współpraca, SEO</title>
+     <description>Dowiedz się więcej, o zakresie usług. Nowe strony, projektowanie, kodowanie, odświeżanie, pozycjonowanie SEO i współpraca. Dodawanie nowych elementów na stronie.</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>http://rwd-stronyinternetowe.pl/faq</link>
+     <title>RWD Strony Internetowe | FAQ- Najczęściej zadawane pytania</title>
+     <description>FAQ Najczęściej zadawane pytania o zakres usług. Tworzenie nowych stron, odnawianie starszych, zmiana elementów, pozycjonowanie oraz współpraca.  </description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>http://rwd-stronyinternetowe.pl/about</link>
+     <title>RWD Strony Internetowe | Kim jestem i czym się zajmuję...</title>
+     <description>RWD Strony Internetowe - kilka zdań o mnie i mojej pasji do tworzenia stron internetowych. O miejscu, w którym mieszkam i dlaczego to robię.</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>http://rwd-stronyinternetowe.pl/contact</link>
+     <title>RWD Strony Internetowe | Miejsce pracy, dane kontaktowe</title>
+     <description>RWD Strony Internetowe - Wybierz preferowany sposób kontaktu. Zadzwoń lub wypełnij informacje w formularzu kontaktowym i wyślij wiadomość.</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>http://rwd-stronyinternetowe.pl/developer</link>
+     <title>RWD Strony Internetowe | Narzędzia Developera</title>
+     <description>Strony internetowe i narzędzia dla Developera. Darmowe zdjęcia, filmy, edytory plików, narzędzia Html, CSS, SEO oraz wiele innych </description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+</channel>
+</rss>
+  

@@ -24,30 +24,30 @@
   // HERO - index.html
   &--index {
     height: 75vh;
-    background-image: linear-gradient( rgba($white, .75), rgba($white, .75)), url('../img/hero-3-small.jpg');
+    background-image: linear-gradient( rgba($white, .65), rgba($white, .75)), url('../img/hero-3-small.jpg');
     
     @include respond(tab-land) {
-      background-image: linear-gradient( rgba($white, .75), rgba($white, .75)), url('../img/hero-3-big.jpg');
+      background-image: linear-gradient( rgba($white, .65), rgba($white, .75)), url('../img/hero-3-big.jpg');
     }
   }
 
   // HERO - contact
   &--contact {
     height: 50vh;
-    background-image: linear-gradient( rgba($white, .75), rgba($white, .9)), url('../img/contact-telefony-small.jpg');
+    background-image: linear-gradient( rgba($white, .55), rgba($white, .65)), url('../img/contact-telefony-small.jpg');
 
     @include respond(tab-land) {
-      background-image: linear-gradient( rgba($white, .75), rgba($white, .9)), url('../img/kontakt-telefony-big.jpg');
+      background-image: linear-gradient( rgba($white, .55), rgba($white, .65)), url('../img/kontakt-telefony-big.jpg');
     }
   }
 
   // HERO - about
   &--about {
     height: 50vh;
-    background-image: linear-gradient( rgba($white, .75), rgba($white, .9)), url('../img/hexagon-small.jpg');
+    background-image: linear-gradient( rgba($white, .55), rgba($white, .65)), url('../img/hexagon-small.jpg');
 
     @include respond(tab-land) {
-      background-image: linear-gradient( rgba($white, .75), rgba($white, .9)), url('../img/hexagon-big.jpg');
+      background-image: linear-gradient( rgba($white, .55), rgba($white, .65)), url('../img/hexagon-big.jpg');
     }
   }
 }
