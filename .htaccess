@@ -1,6 +1,8 @@
 RewriteEngine On
+## Przekierowywanie www.rwd... na nie www.rwd##
 RewriteCond %{HTTP_HOST} ^www.rwd-stronyinternetowe.pl
 RewriteRule (.*) http://rwd-stronyinternetowe.pl/$1 [R=301,L]
+## Usuwanie .html z linkow ##
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^([^\.]+)$ $1.html [NC,L]
 ## EXPIRES CACHING ##
