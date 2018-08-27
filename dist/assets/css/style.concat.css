@@ -309,7 +309,7 @@ $breakpoint argument choices:
 - tab-land
 - big-desktop
 */
-.w-container, .nav__container, .info__container, .display__container, .services__list, .services__bar, .faq__container, .articles__container, .about__container, .contact__container, .footer__container {
+.w-container, .nav__container, .info__container, .display__container, .services__list, .services__bar, .faq__container, .articles__container, .about__container, .contact__container, .developer__container, .footer__container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 3%; }
@@ -436,9 +436,6 @@ ol, ul {
     content: '---';
     margin: 0.4rem 1rem; }
 
-html.sr .load-hidden {
-  visibility: hidden; }
-
 .nav {
   background: #fff;
   border-bottom: 2px solid #f0f0f0; }
@@ -551,22 +548,23 @@ html.sr .load-hidden {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    transform: translate(-50%, -60%); }
-    @media (min-width: 37.5em) {
-      .hero__container {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%); } }
+    transform: translate(-50%, -50%); }
   .hero .btn--purple {
     margin-top: 0.4rem; }
+  .hero--index .hero__container {
+    top: 40%; }
+    @media (min-width: 37.5em) {
+      .hero--index .hero__container {
+        top: 50%; } }
+    .hero--index .hero__container .go-to {
+      visibility: hidden; }
   .hero--index {
-    height: 75vh;
-    background-image: linear-gradient(rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0.75)), url("../img/hero-3-small.jpg"); }
+    height: 100vh;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0.75)), url("../img/hero-index-small.jpg"); }
     @media (min-width: 56.25em) {
       .hero--index {
-        background-image: linear-gradient(rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0.75)), url("../img/hero-3-big.jpg"); } }
+        height: 75vh;
+        background-image: linear-gradient(rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0.75)), url("../img/hero-index.jpg"); } }
   .hero--contact {
     height: 50vh;
     background-image: linear-gradient(rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.65)), url("../img/contact-telefony-small.jpg"); }
@@ -579,6 +577,9 @@ html.sr .load-hidden {
     @media (min-width: 56.25em) {
       .hero--about {
         background-image: linear-gradient(rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.65)), url("../img/hexagon-big.jpg"); } }
+  .hero--developer {
+    height: 50vh;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.65)), url("../img/klucz-small.jpg"); }
 
 .info__box {
   width: 100%;
@@ -699,9 +700,8 @@ html.sr .load-hidden {
 
 .display {
   height: 20rem;
-  background-image: linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), url("../img/introwertyk.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.45)), url("../img/hexellence_@2X.png");
+  background-repeat: repeat;
   background-position: center center; }
   @media (min-width: 37.5em) {
     .display {
@@ -1065,6 +1065,101 @@ html.sr .load-hidden {
     width: 100%;
     border: none; }
 
+.developer {
+  margin: 1.6rem auto; }
+  .developer__section {
+    box-shadow: 0 2px 13px #c2c2c2;
+    padding: 1rem;
+    margin-top: 1.6rem;
+    text-align: center; }
+    .developer__section:nth-child(1) {
+      background-image: linear-gradient(135deg, rgba(157, 106, 163, 0.1), rgba(89, 148, 240, 0.1)); }
+    .developer__section:nth-child(2) {
+      background-image: linear-gradient(-135deg, rgba(89, 148, 240, 0.1), rgba(255, 129, 100, 0.1)); }
+    .developer__section:nth-child(3) {
+      background-image: linear-gradient(135deg, rgba(255, 129, 100, 0.1), rgba(75, 214, 133, 0.1)); }
+    .developer__section:nth-child(4) {
+      background-image: linear-gradient(-135deg, rgba(75, 214, 133, 0.1), rgba(157, 106, 163, 0.1)); }
+    .developer__section:nth-child(5) {
+      background-image: linear-gradient(135deg, rgba(157, 106, 163, 0.1), rgba(89, 148, 240, 0.1)); }
+    .developer__section:nth-child(6) {
+      background-image: linear-gradient(-135deg, rgba(89, 148, 240, 0.1), rgba(255, 129, 100, 0.1)); }
+    .developer__section:nth-child(7) {
+      background-image: linear-gradient(135deg, rgba(255, 129, 100, 0.1), rgba(75, 214, 133, 0.1)); }
+    .developer__section:nth-child(8) {
+      background-image: linear-gradient(-135deg, rgba(75, 214, 133, 0.1), rgba(157, 106, 163, 0.1)); }
+    .developer__section .article-heading {
+      display: inline-block; }
+      .developer__section .article-heading + img,
+      .developer__section .article-heading + img + img {
+        display: inline-block;
+        vertical-align: baseline;
+        height: 3rem;
+        width: 3rem;
+        margin-top: 0.4rem;
+        margin-left: 0.4rem; }
+  .developer__categories {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 1rem; }
+    @media (min-width: 37.5em) {
+      .developer__categories {
+        flex-direction: row; } }
+  .developer__category {
+    border: 2px solid #222222;
+    margin: 0.4rem 1rem;
+    text-align: center; }
+  .developer__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; }
+  .developer__item {
+    width: 100%;
+    padding: 0.4rem;
+    height: auto;
+    min-height: 8rem;
+    margin-top: 0.4rem; }
+    @media (min-width: 37.5em) {
+      .developer__item {
+        width: 48%;
+        height: auto;
+        min-height: 10rem; } }
+    @media (min-width: 56.25em) {
+      .developer__item {
+        width: 32%; } }
+  .developer__link {
+    padding: 0.4rem 1rem;
+    text-decoration: none;
+    display: block;
+    background-color: #fff;
+    transition: all .2s; }
+    .developer__link:hover {
+      background-color: #ededed; }
+  .developer__article {
+    text-align: left; }
+    .developer__article > * {
+      display: inline-block;
+      vertical-align: middle; }
+  .developer .box-heading {
+    margin-left: 0.4rem; }
+  .developer .articles__text {
+    width: 100%;
+    text-align: justify; }
+  .developer__price {
+    float: right;
+    transform: rotate(-5deg);
+    padding: 2px 0.4rem; }
+    .developer__price--free {
+      color: #4bd685;
+      border: 2px solid #4bd685; }
+    .developer__price--paid {
+      color: #ff8164;
+      border: 2px solid #ff8164; }
+  .developer .articles__text {
+    margin-top: 1rem; }
+
 .footer {
   padding: 1rem; }
   .footer .social-media {
@@ -1078,3 +1173,6 @@ html.sr .load-hidden {
     display: inline-block; }
     .footer__item:not(:last-of-type)::after {
       content: '|'; }
+
+html.sr .load-hidden {
+  visibility: hidden; }

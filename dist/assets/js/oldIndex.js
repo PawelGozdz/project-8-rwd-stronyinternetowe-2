@@ -2,7 +2,6 @@
  *
 */
 
-document.querySelector('.navbar ul li:last-child').style.display = 'none';
 
 // Main cotrol object
 const state = {};
@@ -379,12 +378,32 @@ if(document.querySelector('#contact-form')) {
 /**FORM VALIDATION */
 
 // Smooth scroll 
-let element = document.querySelector('.info');
-let btn = document.querySelector('.go-to__services');
-if(element && btn) {
-  btn.addEventListener('click', (e)=>{
+const smoothElement = document.querySelector('.info');
+const smoothBtn = document.querySelector('.go-to__services');
+const developerCategories = [...document.querySelectorAll('.developer__category .developer__link')];
+const categoriesToGoTo = [...document.querySelectorAll('.developer__section')];
+
+// Index page
+if(smoothElement && smoothBtn) {
+  smoothBtn.addEventListener('click', (e)=>{
     e.preventDefault();
-    element.scrollIntoView({behavior: "smooth"});
+    smoothElement.scrollIntoView({behavior: "smooth"});
   });
 }
+
+// Developer page
+
+function scrollToSection(e) {
+  // e.preventDefault();
+  const getAttr = e.target.getAttribute('href').replace('#', '');
+  const goTo = categoriesToGoTo.filter((el) => el.getAttribute('id') == getAttr);
+  console.log(goTo);
+  goToElement(gotTo[0]);
+}
+
+
+developerCategories.forEach(el => {
+  el.addEventListener('click', scrollToSection);
+});
+
 

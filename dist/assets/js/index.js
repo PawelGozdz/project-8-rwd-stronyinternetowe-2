@@ -2,7 +2,6 @@
  *
 */
 
-// document.querySelector('.navbar ul li:last-child').style.display = 'none';
 
 // Main cotrol object
 const state = {};
