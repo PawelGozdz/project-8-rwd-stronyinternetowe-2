@@ -9,25 +9,32 @@
     text-align: center;
 
     @include absCenter;
-    transform: translate(-50%, -60%);
-    
-    @include respond(tab-port) {
-      @include absCenter;
-
-    }
   }
 
   .btn--purple {
     margin-top: $sp-1;
   }
 
+  &--index .hero__container {
+    top: 40%;
+    
+    @include respond(tab-port) {
+      top: 50%;
+    }
+
+    .go-to {
+      visibility: hidden;
+    }
+  }
+
   // HERO - index.html
   &--index {
-    height: 75vh;
-    background-image: linear-gradient( rgba($white, .65), rgba($white, .75)), url('../img/hero-3-small.jpg');
+    height: 100vh;
+    background-image: linear-gradient( rgba($white, .65), rgba($white, .75)), url('../img/hero-index-small.jpg');
     
     @include respond(tab-land) {
-      background-image: linear-gradient( rgba($white, .65), rgba($white, .75)), url('../img/hero-3-big.jpg');
+      height: 75vh;
+      background-image: linear-gradient( rgba($white, .65), rgba($white, .75)), url('../img/hero-index.jpg');
     }
   }
 
@@ -49,5 +56,15 @@
     @include respond(tab-land) {
       background-image: linear-gradient( rgba($white, .55), rgba($white, .65)), url('../img/hexagon-big.jpg');
     }
+  }
+
+  // HERO - developer
+  &--developer {
+    height: 50vh;
+  //========================================================
+  // This pattern is downloaded from www.subtlepatterns.com 
+  // If you need more, that's where to get'em.
+  //========================================================
+    background-image:  linear-gradient( rgba($white, .55), rgba($white, .65)), url('../img/klucz-small.jpg');
   }
 }

@@ -1,8 +1,8 @@
 .display {
   height: 20rem;
-  background-image: linear-gradient( rgba($white, .75), rgba($white, .75)), url('../img/introwertyk.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-image: linear-gradient( rgba($white, .35), rgba($white, .45)), url('../img/hexellence_@2X.png');
+  // background-size: contain;
+  background-repeat: repeat;
   background-position: center center;
 
   @include respond(tab-port) {
