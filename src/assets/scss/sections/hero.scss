@@ -3,45 +3,38 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+  width: 100%;
+  min-height: 21rem;
   overflow: hidden;
+
 
   &__container {
     @extend .w-full;
     text-align: center;
 
     @include absCenter;
+    width: 100%;
   }
 
   .btn {
     margin-top: $sp-1;
   }
 
-  // &--index .hero__container {
-  //   top: 40%;
-    
-  //   @include respond(tab-port) {
-  //     top: 50%;
-  //   }
-
-  //   .go-to {
-  //     visibility: hidden;
-  //   }
-  // }
-
   // HERO - index.html
   &--index {
-    height: 70vh;
     background-image: linear-gradient( rgba($white, .65), rgba($white, .75)), url('../img/hero-index-small.jpg');
     
-    @include respond(tab-land) {
-      height: 85vh;
+    @include respond(tab-port) {
       background-image: linear-gradient( rgba($white, .65), rgba($white, .75)), url('../img/hero-index.jpg');
+    }
+    @include respond(tab-port) {
+      height: 85vh;
     }
   }
 
   // HERO - contact
   &--contact {
-    height: 60vh;
+    // min-height: 50vh;
     background-image: linear-gradient( rgba($white, .55), rgba($white, .65)), url('../img/contact-telefony-small.jpg');
 
     @include respond(tab-land) {
@@ -51,7 +44,7 @@
 
   // HERO - about
   &--about {
-    height: 60vh;
+    // min-height: 50vh;
     background-image: linear-gradient( rgba($white, .55), rgba($white, .65)), url('../img/hexagon-small.jpg');
 
     @include respond(tab-land) {
@@ -61,7 +54,10 @@
 
   // HERO - developer
   &--developer {
-    height: 60vh;
+  //========================================================
+  // This pattern is downloaded from www.subtlepatterns.com 
+  // If you need more, that's where to get'em.
+  //========================================================
     background-image:  linear-gradient( rgba($white, .55), rgba($white, .65)), url('../img/klucz-small.jpg');
   }
 }
