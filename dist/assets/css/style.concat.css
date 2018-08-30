@@ -370,8 +370,11 @@ html:visited {
   color: #222222; }
 
 h1 {
-  font-size: 3rem;
+  font-size: 2.6rem;
   font-weight: normal; }
+  @media (min-width: 37.5em) {
+    h1 {
+      font-size: 3rem; } }
 
 .section-heading,
 .article-heading,
@@ -542,43 +545,37 @@ ol, ul {
   position: relative;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center center; }
+  background-position: center center;
+  overflow: hidden; }
   .hero__container {
     text-align: center;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); }
-  .hero .btn--purple {
+  .hero .btn {
     margin-top: 0.4rem; }
-  .hero--index .hero__container {
-    top: 40%; }
-    @media (min-width: 37.5em) {
-      .hero--index .hero__container {
-        top: 50%; } }
-    .hero--index .hero__container .go-to {
-      visibility: hidden; }
   .hero--index {
-    height: 100vh;
+    height: 70vh;
     background-image: linear-gradient(rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0.75)), url("../img/hero-index-small.jpg"); }
     @media (min-width: 56.25em) {
       .hero--index {
-        height: 75vh;
+        height: 85vh;
         background-image: linear-gradient(rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0.75)), url("../img/hero-index.jpg"); } }
   .hero--contact {
-    height: 50vh;
+    height: 60vh;
     background-image: linear-gradient(rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.65)), url("../img/contact-telefony-small.jpg"); }
     @media (min-width: 56.25em) {
       .hero--contact {
         background-image: linear-gradient(rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.65)), url("../img/kontakt-telefony-big.jpg"); } }
   .hero--about {
-    height: 50vh;
+    height: 60vh;
     background-image: linear-gradient(rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.65)), url("../img/hexagon-small.jpg"); }
     @media (min-width: 56.25em) {
       .hero--about {
         background-image: linear-gradient(rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.65)), url("../img/hexagon-big.jpg"); } }
   .hero--developer {
-    height: 50vh;
+    height: 60vh;
     background-image: linear-gradient(rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.65)), url("../img/klucz-small.jpg"); }
 
 .info__box {
